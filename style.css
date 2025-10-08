@@ -64,11 +64,11 @@ button {
     #cookiePopup {
         width: 100%;
     }
-    .hide {
+    .cookie-hide {
         bottom: 2em;
         right: 0;
     }
-    .show {
+    .cookie-show {
         right: 0;
         bottom: 0;
     }
