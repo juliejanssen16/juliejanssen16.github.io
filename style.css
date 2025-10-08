@@ -48,16 +48,18 @@ button {
 #cookiePopup a {
     color: #6859fe;
 }
-.hide {
-    visibility: hidden;
-    bottom: 0;
-    right: 2em;
-}
-.show {
+/* Cookie popup */
+.cookie-show {
     visibility: visible;
     bottom: 2em;
     right: 2em;
 }
+.cookie-hide {
+    visibility: hidden;
+    bottom: 0;
+    right: 2em;
+}
+
 @media only screen and (max-width: 37.5em) {
     #cookiePopup {
         width: 100%;

@@ -18,12 +18,12 @@ const checkCookie = () => {
     //Check for our cookie
     if (input[0] == "myCookieName") {
         //Hide the popup
-        popUp.classList.add("hide");
-        popUp.classList.remove("show");
+        popUp.classList.add("cookie-hide");
+        popUp.classList.remove("cookie-show");
     } else {
         //Show the popup
-        popUp.classList.add("show");
-        popUp.classList.remove("hide");
+        popUp.classList.add("cookie-show");
+        popUp.classList.remove("cookie-hide");
         console.log("showing cookey")
     }
 };
