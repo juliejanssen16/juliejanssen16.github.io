@@ -1,448 +1,728 @@
-body {
-    height: 100vh;
-    width: 100vw;
-}
+/* Google Fonts Import */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
+/* ==================== GLOBAL STYLES ==================== */
 * {
-    margin: 0;
-    padding: 0;
-{
-    box-sizing: border-box
-}
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-button {
-    width: 250px;
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #2d2d2d;
+  background: linear-gradient(135deg, #ffeef8 0%, #ffe0f0 50%, #ffd4e8 100%);
+  min-height: 100vh;
+  width: 100%;
+  text-align: center;
+  overflow-x: hidden;
 }
+
+/* Prevent horizontal scrolling on mobile */
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* ==================== COOKIE POPUP ==================== */
 #cookiePopup {
-    background-color: #ffffff;
-    position: absolute;
-    font-size: 14px;
-    width: 70vw;
-    max-width: 42.85em;
-    box-shadow: 0 0 2em rgba(5, 0, 31, 0.15);
-    font-family: "Poppins", sans-serif;
-    text-align: justify;
-    line-height: 1.8em;
-    padding: 2em 1.4em;
-    border-radius: 6px;
-    transition: all 0.5s ease-in;
+  background: #ffffff;
+  position: fixed;
+  font-size: 14px;
+  width: 70vw;
+  max-width: 42.85em;
+  box-shadow: 0 10px 40px rgba(219, 39, 119, 0.2);
+  font-family: "Poppins", sans-serif;
+  text-align: justify;
+  line-height: 1.8em;
+  padding: 2em 1.8em;
+  border-radius: 16px;
+  transition: all 0.5s ease-in;
+  border: 2px solid rgba(236, 72, 153, 0.1);
+  z-index: 1000;
 }
+
 #cookiePopup img {
-    display: block;
-    width: 3.75em;
-    transform: translateZ(0);
-    position: relative;
-    margin: auto;
+  display: block;
+  width: 3.75em;
+  margin: 0 auto 1em;
 }
+
 #cookiePopup p {
-    text-align: center;
-    margin: 1.4em 0;
+  text-align: center;
+  margin: 1.4em 0;
+  color: #4a4a4a;
 }
+
 #cookiePopup button {
-    background-color: #6859fe;
-    border: none;
-    color: #ffffff;
-    font-size: 1.2em;
-    padding: 1em 1.4em;
-    display: block;
-    position: relative;
-    margin: auto;
-    border-radius: 5px;
+  background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+  border: none;
+  color: #ffffff;
+  font-size: 1.1em;
+  font-weight: 600;
+  padding: 0.9em 2em;
+  display: block;
+  margin: auto;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
 }
+
+#cookiePopup button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.4);
+}
+
 #cookiePopup a {
-    color: #6859fe;
+  color: #ec4899;
+  font-weight: 500;
+  text-decoration: none;
 }
-/* Cookie popup */
+
+#cookiePopup a:hover {
+  text-decoration: underline;
+}
+
 .cookie-show {
-    visibility: visible;
-    bottom: 2em;
-    right: 2em;
+  visibility: visible;
+  bottom: 2em;
+  right: 2em;
 }
+
 .cookie-hide {
-    visibility: hidden;
-    bottom: 0;
-    right: 2em;
+  visibility: hidden;
+  bottom: 0;
+  right: 2em;
 }
 
 @media only screen and (max-width: 37.5em) {
-    #cookiePopup {
-        width: 100%;
-    }
-    .cookie-hide {
-        bottom: 2em;
-        right: 0;
-    }
-    .cookie-show {
-        right: 0;
-        bottom: 0;
-    }
+  #cookiePopup {
+    width: 90%;
+    padding: 1.5em;
+  }
+  .cookie-hide {
+    bottom: 2em;
+    right: 0;
+    left: 5%;
+  }
+  .cookie-show {
+    right: 0;
+    left: 5%;
+    bottom: 2em;
+  }
 }
 
-#ImageIntroduction {
-    height: 150px;
-    width: 160px;
-    margin-top: 150px;
+/* ==================== GOOGLE TRANSLATE ==================== */
+.translate-container {
+  margin: 30px auto;
+  padding: 25px;
+  text-align: center;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(236, 72, 153, 0.25);
+  max-width: 500px;
+  border: 3px solid #ec4899;
 }
 
-#introText {
-    font-size: small;
-    margin-top: 10px;
-    padding-bottom: 30px;
+.translate-heading {
+  color: #db2777;
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
 }
 
-.tabContent {
-    padding-bottom: 30px;
+#google_translate_element {
+  margin: 0 auto;
+  text-align: center;
 }
 
-#myName {
+/* Style the Google Translate dropdown */
+.goog-te-combo {
+  background: linear-gradient(135deg, #ec4899 0%, #db2777 100%) !important;
+  color: white !important;
+  border: none !important;
+  padding: 10px 20px !important;
+  border-radius: 30px !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4) !important;
+  min-width: 200px !important;
 }
 
-#HomePage {
-    display: none;
+.goog-te-combo:hover {
+  background: linear-gradient(135deg, #f472b6 0%, #ec4899 100%) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.5) !important;
 }
 
-#PongTitle {
+.goog-te-combo option {
+  background: white !important;
+  color: #2d2d2d !important;
+  padding: 8px !important;
 }
 
-#AmbitionTitle {
+/* Hide Google Translate branding */
+.goog-te-banner-frame {
+  display: none !important;
 }
 
-#AmbitionImage {
+.goog-te-gadget {
+  font-family: "Poppins", sans-serif !important;
+  color: #db2777 !important;
+  font-size: 14px !important;
 }
 
-#AmbitionParagraph {
-    padding-bottom: 30px;
+.goog-te-gadget-simple {
+  background: transparent !important;
+  border: none !important;
 }
 
-#FirstPersonTitle {
+/* Remove the "Powered by" text */
+.goog-te-gadget-icon {
+  display: none !important;
 }
 
-#FirstPersonImage {
-}
-
-#FirstPersonParagraph {
-    padding-bottom: 30px;
-}
-
-#MobileGameTitle {
-}
-
-#MobileGameImage {
-}
-
-#MobileGameParagraph {
-    padding-bottom: 30px;
-}
-
-#WanderingTitle {
-}
-
-#MindfulWanderingImage {
-}
-
-#MindfulWanderingParagraph {
-    padding-bottom: 30px;
-}
-
-#OnTheGoTitle {
-}
-
-#OnTheGoImage {
-}
-
-#OnTheGoParagraph {
-    padding-bottom: 30px;
-}
-
-#PointAndClickTitle {
-}
-
-#PointAndClickImage {
-}
-
-#PointAndClickParagraph {
-    padding-bottom: 30px;
-}
-
-#BlenderCharacterTitle {
-}
-
-#BlenderCharacterImage {
-    height: 600px;
-    width: 800px;
-}
-
-#BlenderCharacterParagraph {
-    padding-bottom: 30px;
-}
-
-#PongTitle {
-}
-
-#PongImage {
-}
-
-#PongParagraph {
-    margin-bottom: 30px;
-}
-
-#ContactPageTitle {
-}
-
-#ContactPageParagraph {
-    padding-bottom: 30px;
-}
-
-/* Dropdown Button */
-.dropbtn {
-    font-family: 'Helvetica', 'Arial', sans-serif;
-    display: inline-block;
-    font-size: 15px;
-    padding: 1em 2em;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    -webkit-appearance: none;
-    appearance: none;
-    background-color: deeppink;
-    color: white;
-    border-radius: 4px;
-    border: none;
-    cursor: pointer;
-    position: relative;
-    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
-    box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
-}
-
-/* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbtn:focus {
-    background-color: hotpink;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-    left: 125px;
-    position: absolute;
-    background-color: #f1f1f1;
-    width: 250px;
-    margin-left: -51%;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    border-style: solid;
-    border-width: 3px;
-    border-color: #dddddd;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {
-    display: block;
+.goog-logo-link {
+  display: none !important;
 }
 
 body {
-    font-size: 16px;
-    font-family: 'Helvetica', 'Arial', sans-serif;
-    text-align: center;
-    background-color: white;
-    width: 100%;
-    height: 100%;
+  top: 0 !important;
 }
 
+/* ==================== NAVIGATION TABS ==================== */
+#tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 20px;
+  flex-wrap: wrap;
+}
+
+/* ==================== HOME PAGE ==================== */
+#ImageIntroduction {
+  height: 180px;
+  width: auto;
+  margin-top: 30px;
+  border-radius: 50%;
+  box-shadow: 0 8px 24px rgba(236, 72, 153, 0.3);
+}
+
+#myName {
+  font-size: 2.5em;
+  color: #db2777;
+  margin: 25px 0 15px;
+  font-weight: 700;
+}
+
+#introText {
+  font-size: 1.05em;
+  margin-top: 20px;
+  padding-bottom: 30px;
+  line-height: 2;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #4a4a4a;
+}
+
+/* ==================== TAB CONTENT ==================== */
+.tabContent {
+  display: none;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(236, 72, 153, 0.1);
+  margin-top: 20px;
+  margin-bottom: 40px;
+  backdrop-filter: blur(10px);
+}
+
+#HomePage {
+  display: none;
+}
+
+.tabContent h1 {
+  color: #db2777;
+  font-size: 2.5em;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.tabContent h2 {
+  color: #ec4899;
+  font-size: 1.8em;
+  margin: 25px 0 15px;
+  font-weight: 600;
+}
+
+.tabContent p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #4a4a4a;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+.tabContent img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+  transition: transform 0.3s ease;
+}
+
+.tabContent img:hover {
+  transform: scale(1.02);
+}
+
+/* Project Image Sizes */
+#BlenderCharacterImage {
+  height: 600px;
+  width: 800px;
+  max-width: 100%;
+}
+
+#PongParagraph {
+  margin-bottom: 30px;
+}
+
+/* ==================== DROPDOWN ==================== */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  font-family: "Poppins", sans-serif;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 1em 2em;
+  margin: 10px;
+  appearance: none;
+  background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+  color: white;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.5);
+  background: linear-gradient(135deg, #f472b6 0%, #ec4899 100%);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 280px;
+  box-shadow: 0 8px 30px rgba(236, 72, 153, 0.2);
+  z-index: 1;
+  border-radius: 16px;
+  padding: 10px;
+  margin-top: 10px;
+  border: 2px solid rgba(236, 72, 153, 0.1);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dropdown-content button {
+  width: 100%;
+  margin: 5px 0;
+  text-align: center;
+}
+
+.dropdown-content a {
+  color: #2d2d2d;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #fce7f3;
+}
+
+.show {
+  display: block;
+}
+
+/* ==================== BUBBLY BUTTONS ==================== */
 .bubbly-button {
-    font-family: 'Helvetica', 'Arial', sans-serif;
-    display: inline-block;
-    font-size: 15px;
-    padding: 1em 2em;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    -webkit-appearance: none;
-    appearance: none;
-    background-color: deeppink;
-    color: white;
-    border-radius: 4px;
-    border: none;
-    cursor: pointer;
-    position: relative;
-    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
-    box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
+  font-family: "Poppins", sans-serif;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 1em 2em;
+  margin: 10px;
+  appearance: none;
+  background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+  color: white;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
+  text-transform: capitalize;
+}
+
+.bubbly-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.5);
+  background: linear-gradient(135deg, #f472b6 0%, #ec4899 100%);
 }
 
 .bubbly-button:focus {
-    outline: 0;
-}
-
-.bubbly-button:before, .bubbly-button:after {
-    position: absolute;
-    content: '';
-    display: block;
-    width: 140%;
-    height: 100%;
-    left: -20%;
-    z-index: -1000;
-    transition: all ease-in-out 0.5s;
-    background-repeat: no-repeat;
-}
-
-.bubbly-button:before {
-    display: none;
-    top: -75%;
-    background-image: radial-gradient(circle, plum 20%, transparent 20%),
-    radial-gradient(circle, transparent 20%, plum 20%, transparent 30%),
-    radial-gradient(circle, plum 20%, transparent 20%),
-    radial-gradient(circle, plum 20%, transparent 20%),
-    radial-gradient(circle, transparent 10%, plum 15%, transparent 20%),
-    radial-gradient(circle, plum 20%, transparent 20%),
-    radial-gradient(circle, plum 20%, transparent 20%),
-    radial-gradient(circle, plum 20%, transparent 20%),
-    radial-gradient(circle, plum 20%, transparent 20%);
-    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
-/ / background-position: 0 % 80 %, - 5 % 20 %, 10 % 40 %, 20 % 0 %, 30 % 30 %, 22 % 50 %, 50 % 50 %, 65 % 20 %, 85 % 30 %;
-}
-
-.bubbly-button:after {
-    display: none;
-    bottom: -75%;
-    background-image: radial-gradient(circle, plum 20%, transparent 20%),
-    radial-gradient(circle, plum 20%, transparent 20%),
-    radial-gradient(circle, transparent 10%, plum 15%, transparent 20%),
-    radial-gradient(circle, plum 20%, transparent 20%),
-    radial-gradient(circle, plum 20%, transparent 20%),
-    radial-gradient(circle, plum 20%, transparent 20%),
-    radial-gradient(circle, plum 20%, transparent 20%);
-    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
-/ / background-position: 5 % 90 %, 10 % 90 %, 10 % 90 %, 15 % 90 %, 25 % 90 %, 25 % 90 %, 40 % 90 %, 55 % 90 %, 70 % 90 %;
+  outline: none;
 }
 
 .bubbly-button:active {
-    transform: scale(0.9);
-    background-color: plum;
-    box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
+  transform: scale(0.95);
+  box-shadow: 0 2px 10px rgba(236, 72, 153, 0.3);
+}
+
+/* Bubble Animation */
+.bubbly-button:before,
+.bubbly-button:after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 140%;
+  height: 100%;
+  left: -20%;
+  z-index: -1000;
+  transition: all ease-in-out 0.5s;
+  background-repeat: no-repeat;
+}
+
+.bubbly-button:before {
+  display: none;
+  top: -75%;
+  background-image: radial-gradient(circle, #fbbf24 20%, transparent 20%),
+    radial-gradient(circle, transparent 20%, #fbbf24 20%, transparent 30%),
+    radial-gradient(circle, #fbbf24 20%, transparent 20%),
+    radial-gradient(circle, #fbbf24 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #fbbf24 15%, transparent 20%),
+    radial-gradient(circle, #fbbf24 20%, transparent 20%),
+    radial-gradient(circle, #fbbf24 20%, transparent 20%),
+    radial-gradient(circle, #fbbf24 20%, transparent 20%),
+    radial-gradient(circle, #fbbf24 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+    10% 10%, 18% 18%;
+}
+
+.bubbly-button:after {
+  display: none;
+  bottom: -75%;
+  background-image: radial-gradient(circle, #fbbf24 20%, transparent 20%),
+    radial-gradient(circle, #fbbf24 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #fbbf24 15%, transparent 20%),
+    radial-gradient(circle, #fbbf24 20%, transparent 20%),
+    radial-gradient(circle, #fbbf24 20%, transparent 20%),
+    radial-gradient(circle, #fbbf24 20%, transparent 20%),
+    radial-gradient(circle, #fbbf24 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
 }
 
 .bubbly-button.animate:before {
-    display: block;
-    animation: topBubbles ease-in-out 0.75s forwards;
+  display: block;
+  animation: topBubbles ease-in-out 0.75s forwards;
 }
 
 .bubbly-button.animate:after {
-    display: block;
-    animation: bottomBubbles ease-in-out 0.75s forwards;
+  display: block;
+  animation: bottomBubbles ease-in-out 0.75s forwards;
 }
 
 @keyframes topBubbles {
-    0% {
-        background-position: 0% 90%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 85% 30%;
-    }
-    50% {
-        background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
-    }
-    100% {
-        background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
-        background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
-    }
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+      40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+      50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+      50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
 }
 
 @keyframes bottomBubbles {
-    0% {
-        background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
-    }
-    50% {
-        background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
-    }
-    100% {
-        background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
-        background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
-    }
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+      70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+      105% 0%;
+  }
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+      110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
 }
 
-
-/* Dropdown Button */
-.dropbtn {
-    background-color: #fc47ab;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
+/* ==================== BEST WORK SECTION ==================== */
+.imagesRow {
+  width: 380px;
+  height: 350px;
+  margin-top: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
-/* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbtn:focus {
-    background-color: #fd87c1;
+#BestWorkParagraph {
+  margin-bottom: 30px;
+  font-size: 1.2em;
+  color: #4a4a4a;
 }
 
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-    position: relative;
-    display: inline-block;
+#mentalhealthImg {
+  width: 500px;
+  height: 300px;
+  max-width: 100%;
 }
 
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  #tabs {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 10px;
+  }
+
+  .bubbly-button,
+  .dropbtn {
+    width: 90%;
+    max-width: 300px;
+    font-size: 14px;
+    padding: 0.9em 1.5em;
+  }
+
+  .dropdown-content {
+    width: 90%;
+    max-width: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .tabContent {
+    padding: 20px 15px;
+    margin: 10px;
+    border-radius: 16px;
+  }
+
+  .tabContent h1 {
+    font-size: 2em;
+  }
+
+  .tabContent h2 {
+    font-size: 1.5em;
+  }
+
+  .tabContent p {
+    font-size: 1em;
+    padding: 0 10px;
+  }
+
+  .imagesRow {
+    width: 100%;
+    height: auto;
+  }
+
+  #mentalhealthImg {
+    width: 100%;
+    height: auto;
+  }
+
+  #BlenderCharacterImage {
+    width: 100%;
+    height: auto;
+  }
+
+  #ImageIntroduction {
+    height: 150px;
+  }
+
+  /* Cookie popup mobile */
+  #cookiePopup {
+    width: 85vw;
+    padding: 1.5em;
+    font-size: 13px;
+  }
+
+  #cookiePopup button {
+    font-size: 1em;
+    padding: 0.8em 1.5em;
+  }
+
+  /* Google Translate mobile styles */
+  .translate-container {
+    margin: 20px 10px;
+    padding: 20px 15px;
+    max-width: 95%;
+    border-width: 2px;
+  }
+
+  .translate-heading {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+  }
+
+  .goog-te-combo {
+    min-width: 150px !important;
+    font-size: 14px !important;
+    padding: 8px 15px !important;
+  }
 }
 
-/* Links inside the dropdown */
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
+@media only screen and (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
 
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
+  #tabs {
+    padding: 15px 5px;
+  }
 
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {
-    display: block;
-}
+  .bubbly-button,
+  .dropbtn {
+    font-size: 13px;
+    padding: 0.8em 1.2em;
+    margin: 5px;
+  }
 
-#tabs {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    grid-gap: 30px;
-}
+  .tabContent {
+    padding: 15px 10px;
+    margin: 5px;
+  }
 
-.imagesRow{
-    width: 380px;
-    height: 350px;
-    margin-top: 20px;
-}
-
-#BestWorkParagraph{
+  .tabContent h1 {
+    font-size: 1.8em;
     margin-bottom: 20px;
+  }
+
+  .tabContent h2 {
+    font-size: 1.3em;
+    margin: 20px 0 10px;
+  }
+
+  .tabContent p {
+    font-size: 0.95em;
+    line-height: 1.7;
+  }
+
+  #myName {
+    font-size: 2em;
+  }
+
+  #ImageIntroduction {
+    height: 120px;
+    margin-top: 20px;
+  }
+
+  #introText {
+    font-size: 0.9em;
+  }
+
+  /* Cookie popup small mobile */
+  #cookiePopup {
+    width: 90vw;
+    padding: 1.2em;
+    font-size: 12px;
+  }
+
+  #cookiePopup img {
+    width: 3em;
+  }
+
+  #cookiePopup button {
+    font-size: 0.95em;
+    padding: 0.7em 1.2em;
+  }
+
+  /* Google Translate small mobile styles */
+  .translate-container {
+    margin: 15px 5px;
+    padding: 15px 10px;
+  }
+
+  .translate-heading {
+    font-size: 1.1em;
+    margin-bottom: 12px;
+  }
+
+  .goog-te-combo {
+    min-width: 120px !important;
+    font-size: 13px !important;
+    padding: 7px 12px !important;
+  }
 }
 
-#mentalhealthImg{
-    width: 500px;
-    height: 300px;
+/* Extra small devices */
+@media only screen and (max-width: 360px) {
+  body {
+    font-size: 13px;
+  }
+
+  .bubbly-button,
+  .dropbtn {
+    font-size: 12px;
+    padding: 0.7em 1em;
+  }
+
+  .tabContent h1 {
+    font-size: 1.5em;
+  }
+
+  .tabContent h2 {
+    font-size: 1.2em;
+  }
+
+  .translate-heading {
+    font-size: 1em;
+  }
+
+  #ImageIntroduction {
+    height: 100px;
+  }
 }
 
+/* ==================== UTILITIES ==================== */
+button {
+  font-family: "Poppins", sans-serif;
+}
 
+.hide {
+  display: none !important;
+}
