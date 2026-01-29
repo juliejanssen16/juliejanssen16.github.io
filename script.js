@@ -1,104 +1,189 @@
-let popUp = document.getElementById("cookiePopup");
-//When user clicks the accept button
-document.getElementById("acceptCookie").addEventListener("click", () => {
-    //Create date object
-    let d = new Date();
-    //Increment the current time by 1 minute (cookie will expire after 1 minute)
-    d.setMinutes(2 + d.getMinutes());
-    //Create Cookie withname = myCookieName, value = thisIsMyCookie and expiry time=1 minute
-    document.cookie = "myCookieName=thisIsMyCookie; expires = " + d + ";";
-    //Hide the popup
-    popUp.classList.add("hide");
-    popUp.classList.remove("show");
+// =====================
+// COOKIE POPUP
+// =====================
+const popUp = document.getElementById("cookiePopup");
+
+document.getElementById("acceptCookie")?.addEventListener("click", () => {
+  const d = new Date();
+  d.setMinutes(d.getMinutes() + 2);
+  document.cookie =
+    "myCookieName=thisIsMyCookie; expires=" + d.toUTCString() + "; path=/";
+
+  popUp?.classList.add("hide");
+  popUp?.classList.remove("cookie-show");
 });
-//Check if cookie is already present
+
 const checkCookie = () => {
-    //Read the cookie and split on "="
-    let input = document.cookie.split("=");
-    //Check for our cookie
-    if (input[0] == "myCookieName") {
-        //Hide the popup
-        popUp.classList.add("cookie-hide");
-        popUp.classList.remove("cookie-show");
-    } else {
-        //Show the popup
-        popUp.classList.add("cookie-show");
-        popUp.classList.remove("cookie-hide");
-        console.log("showing cookey")
-    }
-};
-//Check if cookie exists when page loads
-// window.onload = () => {
-//     console.log("page loaded")
-//
-// };
+  const hasCookie = document.cookie.includes("myCookieName=thisIsMyCookie");
+  if (!popUp) return;
 
+  if (hasCookie) {
+    popUp.classList.add("cookie-hide");
+    popUp.classList.remove("cookie-show");
+  } else {
+    popUp.classList.add("cookie-show");
+    popUp.classList.remove("cookie-hide");
+  }
+};
+
+// =====================
+// TAB SYSTEM
+// =====================
 function openTab(evt, tabName) {
-    // Declare all variables
-    var i, tabContent, tablinks;
+  // Hide all tab contents
+  const tabContent = document.getElementsByClassName("tabContent");
+  for (let i = 0; i < tabContent.length; i++) tabContent[i].style.display = "none";
 
-    // Get all elements with class="tabContent" and hide them
-    tabContent = document.getElementsByClassName("tabContent");
-    for (i = 0; i < tabContent.length; i++) {
-        tabContent[i].style.display = "none";
-    }
+  // Remove active from all tab buttons
+  const tablinks = document.getElementsByClassName("tablinks");
+  for (let i = 0; i < tablinks.length; i++) tablinks[i].classList.remove("active");
 
-    // Get all elements with class="tablinks" and remove the class "active"
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
+  // Show selected tab
+  const current = document.getElementById(tabName);
+  if (current) current.style.display = "block";
 
-    // Show the current tab, and add an "active" class to the link that opened the tab
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
+  // Active state
+  if (evt && evt.currentTarget) evt.currentTarget.classList.add("active");
+
+  // Close dropdown after selection (nice UX)
+  closeProjectsMenu();
+
+  // Scroll to content smoothly
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-// Add this code inside your script.js file
-window.onload = function () {
-    console.log("page loaded Two")
-    openTab(event, 'HomePage'); // Call the openTab function with 'HomePage' as the initial tab
-    setTimeout(() => {
-        checkCookie();
-        console.log("checking cookey")
-    }, 1000);
+window.addEventListener("load", () => {
+  // Default tab
+  const home = document.getElementById("HomePage");
+  if (home) home.style.display = "block";
+
+  const homeBtn = document.getElementById("buttonHome");
+  if (homeBtn) homeBtn.classList.add("active");
+
+  setTimeout(checkCookie, 600);
+});
+
+// =====================
+// BUBBLY BUTTON ANIMATION
+// =====================
+const animateButton = (e) => {
+  e.preventDefault();
+  e.target.classList.remove("animate");
+  e.target.classList.add("animate");
+  setTimeout(() => e.target.classList.remove("animate"), 700);
 };
-var animateButton = function (e) {
-    e.preventDefault(); // Invoke the preventDefault method
-    // Reset animation
-    e.target.classList.remove('animate');
-    e.target.classList.add('animate');
-    setTimeout(function () {
-        e.target.classList.remove('animate');
-    }, 700);
-};
 
-var bubblyButtons = document.getElementsByClassName("bubbly-button");
-
-for (var i = 0; i < bubblyButtons.length; i++) {
-    bubblyButtons[i].addEventListener('click', animateButton, false);
+const bubblyButtons = document.getElementsByClassName("bubbly-button");
+for (let i = 0; i < bubblyButtons.length; i++) {
+  bubblyButtons[i].addEventListener("click", animateButton, false);
 }
 
+// =====================
+// MODERN DROPDOWN MENU (Projects)
+// =====================
+const projectsBtn = document.getElementById("projectsBtn");
+const projectsMenu = document.getElementById("projectsMenu");
 
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
+const projectsMenuIsOpen = () => projectsMenu?.classList.contains("show");
+
+function openProjectsMenu({ focusFirst = false } = {}) {
+  if (!projectsBtn || !projectsMenu) return;
+
+  projectsMenu.classList.add("show");
+  projectsBtn.setAttribute("aria-expanded", "true");
+
+  if (focusFirst) {
+    const firstItem = projectsMenu.querySelector('button[role="menuitem"]');
+    firstItem?.focus();
+  }
 }
 
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function (event) {
-    if (!event.target.matches('.dropbtn')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
-            }
-        }
-    }
+function closeProjectsMenu({ focusButton = false } = {}) {
+  if (!projectsBtn || !projectsMenu) return;
+
+  projectsMenu.classList.remove("show");
+  projectsBtn.setAttribute("aria-expanded", "false");
+
+  if (focusButton) projectsBtn.focus();
 }
 
+function toggleProjectsMenu() {
+  if (!projectsBtn || !projectsMenu) return;
 
+  if (projectsMenuIsOpen()) closeProjectsMenu();
+  else openProjectsMenu();
+}
 
+// Button click toggles menu
+projectsBtn?.addEventListener("click", (e) => {
+  e.stopPropagation();
+  toggleProjectsMenu();
+});
+
+// Click inside menu: selecting an item closes menu nicely
+projectsMenu?.addEventListener("click", (e) => {
+  const item = e.target.closest('button[role="menuitem"]');
+  if (!item) return;
+  closeProjectsMenu();
+});
+
+// Click outside closes
+document.addEventListener("click", (e) => {
+  if (!projectsMenuIsOpen()) return;
+  const clickedInside =
+    projectsMenu.contains(e.target) || projectsBtn.contains(e.target);
+  if (!clickedInside) closeProjectsMenu();
+});
+
+// Keyboard support: Esc closes, arrows navigate
+document.addEventListener("keydown", (e) => {
+  if (!projectsMenuIsOpen()) return;
+
+  if (e.key === "Escape") {
+    e.preventDefault();
+    closeProjectsMenu({ focusButton: true });
+    return;
+  }
+
+  const items = Array.from(
+    projectsMenu.querySelectorAll('button[role="menuitem"]')
+  );
+  if (!items.length) return;
+
+  const currentIndex = items.indexOf(document.activeElement);
+
+  if (e.key === "ArrowDown") {
+    e.preventDefault();
+    const next = items[(currentIndex + 1 + items.length) % items.length];
+    next.focus();
+  }
+
+  if (e.key === "ArrowUp") {
+    e.preventDefault();
+    const prev = items[(currentIndex - 1 + items.length) % items.length];
+    prev.focus();
+  }
+
+  if (e.key === "Home") {
+    e.preventDefault();
+    items[0].focus();
+  }
+
+  if (e.key === "End") {
+    e.preventDefault();
+    items[items.length - 1].focus();
+  }
+});
+
+// Open menu with Enter/Space when focused on button
+projectsBtn?.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" || e.key === " ") {
+    e.preventDefault();
+    toggleProjectsMenu();
+  }
+
+  if (e.key === "ArrowDown") {
+    e.preventDefault();
+    if (!projectsMenuIsOpen()) openProjectsMenu({ focusFirst: true });
+  }
+});

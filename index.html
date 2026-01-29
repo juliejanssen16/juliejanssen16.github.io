@@ -6,619 +6,318 @@
     <title>Portfolio Julie Janssen SD4A</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <div id="cookiePopup" class="cookie-hide">
-      <img src="images/Cookies.png" />
-      <p>
-        Our website uses cookies to provide your browsing experience and
-        relevant information. Before continuing to use our website, you agree &
-        accept of our
-        <a
-          href="https://www.termsfeed.com/live/e06ad1a4-aa3b-44ad-b435-c3c3e803b7e8"
-          >Cookie Policy & Privacy.</a
-        >
-      </p>
-      <button id="acceptCookie">Accept</button>
-    </div>
+ <body>
+  <!-- COOKIE POPUP -->
+  <div id="cookiePopup" class="cookie-hide" role="dialog" aria-live="polite">
+    <img src="images/Cookies.png" alt="Cookie icon" />
+    <p>
+      This website uses cookies to improve your experience and show relevant information.
+      By continuing, you agree to our
+      <a
+        href="https://www.termsfeed.com/live/e06ad1a4-aa3b-44ad-b435-c3c3e803b7e8"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Cookie Policy & Privacy
+      </a>.
+    </p>
+    <button id="acceptCookie" type="button">Accept</button>
+  </div>
 
-    <div id="tabs">
+  <!-- NAV -->
+  <header class="topbar">
+    <div id="tabs" class="tabs-wrap">
       <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">Projects</button>
-        <div id="myDropdown" class="dropdown-content">
-          <button
-            id="buttonBestWork"
-            class="bubbly-button"
-            class="tablinks"
-            onclick="openTab(event, 'BestWork')"
-          >
-            BestWork
-          </button>
-          <button
-            id="buttonPong"
-            class="bubbly-button"
-            class="tablinks"
-            onclick="openTab(event, 'Pong')"
-          >
-            Pong
-          </button>
-          <button
-            id="buttonAmbition"
-            class="bubbly-button"
-            class="tablinks"
-            onclick="openTab(event, 'Ambition')"
-          >
-            AmbitionProject
-          </button>
-          <button
-            id="buttonFirstPerson"
-            class="bubbly-button"
-            class="tablinks"
-            onclick="openTab(event, 'FirstPerson')"
-          >
-            FirstPersonShooter
-          </button>
-          <button
-            id="buttonMobileGame"
-            class="bubbly-button"
-            class="tablinks"
-            onclick="openTab(event, 'MobileGame')"
-          >
-            MobileGame
-          </button>
-          <button
-            id="buttonWandering"
-            class="bubbly-button"
-            class="tablinks"
-            onclick="openTab(event, 'Wandering')"
-          >
-            MindfulWandering
-          </button>
-          <button
-            id="buttonOnTheGo"
-            class="bubbly-button"
-            class="tablinks"
-            onclick="openTab(event, 'OnTheGo')"
-          >
-            MentalHealthOnTheGo
-          </button>
-          <button
-            id="buttonPointAndClick"
-            class="bubbly-button"
-            class="tablinks"
-            onclick="openTab(event, 'PointAndClick')"
-          >
-            PointAndClick
-          </button>
-          <button
-            id="buttonBlenderCharacter"
-            class="bubbly-button"
-            class="tablinks"
-            onclick="openTab(event, 'BlenderCharacter')"
-          >
-            BlenderCharacter
-          </button>
-          <button
-            id="buttonTextGame"
-            class="bubbly-button"
-            class="tablinks"
-            onclick="openTab(event, 'textGame')"
-          >
-            TextGame
-          </button>
-          <button
-            id="buttonWebshop"
-            class="bubbly-button"
-            class="tablinks"
-            onclick="openTab(event, 'webshop')"
-          >
-            Webshop
-          </button>
-          <button
-            id="buttonPlay"
-            class="bubbly-button"
-            class="tablinks"
-            onclick="openTab(event, 'projectPlay')"
-          >
-            ProjectPlay
-          </button>
-          <button
-            id="buttonEffenaar"
-            class="bubbly-button"
-            class="tablinks"
-            onclick="openTab(event, 'effenaar')"
-          >
-            Effenaar
-          </button>
-          <button
-            id="buttonCube"
-            class="bubbly-button"
-            class="tablinks"
-            onclick="openTab(event, 'cubeWorld')"
-          >
-            CubeWorld
-          </button>
-          <button
-            id="buttonLove"
-            class="bubbly-button"
-            class="tablinks"
-            onclick="openTab(event, 'loveSwipe')"
-          >
-            LoveSwipe
-          </button>
+        <button
+  id="projectsBtn"
+  class="dropbtn"
+  type="button"
+  aria-haspopup="menu"
+  aria-expanded="false"
+  aria-controls="projectsMenu"
+>
+  Projects
+  <span class="chev" aria-hidden="true">▾</span>
+</button>
+
+<div
+  id="projectsMenu"
+  class="dropdown-content"
+  role="menu"
+  aria-label="Project menu"
+>
+  <!-- keep your buttons exactly the same inside -->
+  <button id="buttonBestWork" class="bubbly-button tablinks" role="menuitem" onclick="openTab(event, 'BestWork')">Best Work</button>
+  <button id="buttonPong" class="bubbly-button tablinks" role="menuitem" onclick="openTab(event, 'Pong')">Pong</button>
+  <button id="buttonAmbition" class="bubbly-button tablinks" role="menuitem" onclick="openTab(event, 'Ambition')">Ambition Project</button>
+  <button id="buttonFirstPerson" class="bubbly-button tablinks" role="menuitem" onclick="openTab(event, 'FirstPerson')">First Person Shooter</button>
+  <button id="buttonMobileGame" class="bubbly-button tablinks" role="menuitem" onclick="openTab(event, 'MobileGame')">Mobile Game</button>
+  <button id="buttonWandering" class="bubbly-button tablinks" role="menuitem" onclick="openTab(event, 'Wandering')">Mindful Wandering</button>
+  <button id="buttonOnTheGo" class="bubbly-button tablinks" role="menuitem" onclick="openTab(event, 'OnTheGo')">Mental Health On The Go</button>
+  <button id="buttonPointAndClick" class="bubbly-button tablinks" role="menuitem" onclick="openTab(event, 'PointAndClick')">Point & Click</button>
+  <button id="buttonBlenderCharacter" class="bubbly-button tablinks" role="menuitem" onclick="openTab(event, 'BlenderCharacter')">Blender Character</button>
+  <button id="buttonTextGame" class="bubbly-button tablinks" role="menuitem" onclick="openTab(event, 'textGame')">Text Game</button>
+  <button id="buttonWebshop" class="bubbly-button tablinks" role="menuitem" onclick="openTab(event, 'webshop')">Webshop</button>
+  <button id="buttonPlay" class="bubbly-button tablinks" role="menuitem" onclick="openTab(event, 'projectPlay')">Project Play</button>
+  <button id="buttonEffenaar" class="bubbly-button tablinks" role="menuitem" onclick="openTab(event, 'effenaar')">Effenaar</button>
+  <button id="buttonCube" class="bubbly-button tablinks" role="menuitem" onclick="openTab(event, 'cubeWorld')">CubeWorld</button>
+  <button id="buttonLove" class="bubbly-button tablinks" role="menuitem" onclick="openTab(event, 'loveSwipe')">LoveSwipe</button>
+</div>
+
+      <button id="buttonHome" class="bubbly-button tablinks" onclick="openTab(event, 'HomePage')">Home</button>
+      <button id="buttonContactPage" class="bubbly-button tablinks" onclick="openTab(event, 'ContactPage')">Contact</button>
+    </div>
+  </header>
+
+  <!-- TRANSLATE -->
+  <div class="translate-container">
+    <h3 class="translate-heading">🌍 Translate this page</h3>
+    <div id="google_translate_element"></div>
+  </div>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        {
+          pageLanguage: "en",
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          autoDisplay: false,
+        },
+        "google_translate_element"
+      );
+    }
+  </script>
+
+  <!-- HOME -->
+  <div id="HomePage" class="tabContent">
+    <section class="hero">
+      <img src="images/Julie - Copy.png" id="ImageIntroduction" alt="Photo of Julie Janssen" />
+
+      <div class="heroText">
+        <h2 id="myName">Julie Janssen</h2>
+
+        <p class="subtitle">
+          Software Development student • Eindhoven • Web + Game development
+        </p>
+
+        <div class="chips">
+          <span class="chip">C#</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">HTML</span>
+          <span class="chip">CSS</span>
+          <span class="chip">PHP (basic)</span>
+          <span class="chip">Blender (basic)</span>
+        </div>
+
+        <p id="introText">
+          Welcome to my portfolio website — my name is Julie Janssen. I'm 20 years old and I study software development at SintLucas in Eindhoven.
+          <br /><br />
+          I enjoy writing stories, socializing, and listening to music. I want to become a web developer, and I’m also interested in game development.
+          <br /><br />
+          I’m willing to learn and try new things, I respect others, and I enjoy working in a team.
+        </p>
+
+        <div class="heroActions">
+          <button class="bubbly-button tablinks" onclick="openTab(event, 'BestWork')">View best work</button>
+          <button class="bubbly-button tablinks" onclick="openTab(event, 'ContactPage')">Contact</button>
         </div>
       </div>
-      <button
-        id="buttonHome"
-        class="bubbly-button"
-        class="tablinks"
-        onclick="openTab(event, 'HomePage')"
-      >
-        HomePage
-      </button>
-      <button
-        id="buttonContactPage"
-        class="bubbly-button"
-        class="tablinks"
-        onclick="openTab(event, 'ContactPage')"
-      >
-        ContactPage
-      </button>
+    </section>
+  </div>
+
+  <!-- BEST WORK (PROJECT GRID) -->
+  <div id="BestWork" class="tabContent">
+    <h1 id="BestWorkPageTitle">My best work</h1>
+    <p id="BestWorkParagraph">These are the projects I’m most proud of:</p>
+
+    <div class="projectGrid">
+      <article class="projectCard">
+        <img src="images/PointAndClick.png" alt="Screenshot of Point and Click project" />
+        <div class="projectBody">
+          <h2>Point & Click</h2>
+          <p>Interactive click-based experience using HTML, CSS and JavaScript with GitHub workflow.</p>
+          <button class="linkBtn tablinks" onclick="openTab(event, 'PointAndClick')">Open project →</button>
+        </div>
+      </article>
+
+      <article class="projectCard">
+        <img src="images/TextGameInteractive.png" alt="Screenshot of Text Game project" />
+        <div class="projectBody">
+          <h2>Text Game</h2>
+          <p>C# text-based game with branching story outcomes based on player input.</p>
+          <button class="linkBtn tablinks" onclick="openTab(event, 'textGame')">Open project →</button>
+        </div>
+      </article>
+
+      <article class="projectCard">
+        <img src="images/MentalHealthWeekProject.png" alt="Screenshot of Mental health week project" />
+        <div class="projectBody">
+          <h2>Mentalhealth week project</h2>
+          <p>Project focused on mental health awareness and supportive UX choices.</p>
+          <button class="linkBtn tablinks" onclick="openTab(event, 'OnTheGo')">Open project →</button>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- EXISTING PROJECT TABS (your content, lightly tidied) -->
+  <div id="Pong" class="tabContent">
+    <h1 id="PongTitle">PongGame</h1>
+    <img src="images/Pong.png" id="PongImage" alt="Image of my pong game" />
+    <p id="PongParagraph">
+      For this project I made a pong game using Unity and C# scripts. The goal was to get familiar with Unity and C#.
+      I learned object setup, scene switching, scripting, and the particle system.
+    </p>
+  </div>
+
+  <div id="Ambition" class="tabContent">
+    <h1 id="AmbitionTitle">AmbitionProject</h1>
+    <img src="images/Ambition.png" id="AmbitionImage" alt="Image of my ambition game" />
+    <p id="AmbitionParagraph">
+      In this project I started with 3D modeling in Blender. I learned shapes, colors, tools, collision setup,
+      and importing Blender files into Unity.
+    </p>
+  </div>
+
+  <div id="FirstPerson" class="tabContent">
+    <h1 id="FirstPersonTitle">FirstPersonShooter</h1>
+    <img src="images/FirstPerson.png" id="FirstPersonImage" alt="Image of my first person shooter" />
+    <p id="FirstPersonParagraph">
+      This project taught me spawning enemies, terrain creation/customization, and C# player scripts (speed and camera).
+      I also learned handling terrain height and collisions.
+    </p>
+  </div>
+
+  <div id="MobileGame" class="tabContent">
+    <h1 id="MobileGameTitle">MobileGame</h1>
+    <img src="images/MobileGame.png" id="MobileGameImage" alt="Image of my mobile game" />
+    <p id="MobileGameParagraph">
+      I attempted to make an Android mobile game. I experimented with assets, controls, and UI buttons in C#.
+      Camera issues stopped the project, but I learned a lot about troubleshooting and asset behavior.
+    </p>
+  </div>
+
+  <div id="Wandering" class="tabContent">
+    <h1 id="WanderingTitle">MindfulWandering</h1>
+    <img src="images/MindfulWandering.png" id="MindfulWanderingImage" alt="Image of my mindful wandering game" />
+    <p id="MindfulWanderingParagraph">
+      A peaceful exploration game built in Unity with C#. The biggest challenge was player and camera movement.
+    </p>
+  </div>
+
+  <div id="OnTheGo" class="tabContent">
+    <h1 id="OnTheGoTitle">MentalHealthOnTheGo</h1>
+    <img src="images/OnTheGo.png" id="OnTheGoImage" alt="Image of my mental health on the go project" />
+    <p id="OnTheGoParagraph">
+      An app concept that provides information and tips about mental struggles. Built with C#.
+      I faced screen-size, text-size, and scene switching challenges, but learned to research and trust the process.
+    </p>
+  </div>
+
+  <div id="PointAndClick" class="tabContent">
+    <h1 id="PointAndClickTitle">PointAndClick</h1>
+    <img src="images/PointAndClick.png" id="PointAndClickImage" alt="Image of my point and click game" />
+    <p id="PointAndClickParagraph">
+      Introduction to GitHub and pushing updates. Built with HTML, CSS and JavaScript.
+      Clickable surfaces trigger dialogue; tile map made with Photoshop.
+    </p>
+  </div>
+
+  <div id="BlenderCharacter" class="tabContent">
+    <h1 id="BlenderCharacterTitle">BlenderCharacter</h1>
+    <img src="images/BlenderCharacter.png" id="BlenderCharacterImage" alt="Image of my blender character" />
+    <p id="BlenderCharacterParagraph">
+      I made a character in Blender during the Ambition project. It was challenging but taught me tutorials + exploration.
+    </p>
+  </div>
+
+  <div id="textGame" class="tabContent">
+    <h1 id="titleTextGame">TextBasedGame</h1>
+    <img src="images/TextGameInteractive.png" id="textGameImage" alt="Image of my text based game" />
+    <p id="textGameParagraph">
+      A text-based game in C# where users choose actions and the story outcome changes based on input.
+    </p>
+  </div>
+
+  <div id="webshop" class="tabContent">
+    <h1 id="webshopTitle">Webshop</h1>
+    <img src="images/Webshop.png" id="webshopImage" alt="Image of my webshop" />
+    <p id="webshopParagraph"></p>
+  </div>
+
+  <div id="projectPlay" class="tabContent">
+    <h1 id="playTitle">SweetSweep</h1>
+    <img src="images/Play.png" id="PlayImage" alt="Image of Project Play" />
+  </div>
+
+  <div id="effenaar" class="tabContent">
+    <h1 id="effenaarTitle">Effenaar</h1>
+    <img src="images/EffenaarScreen.png" id="effenaarImage" alt="Image of the Effenaar assignment" />
+  </div>
+
+  <div id="cubeWorld" class="tabContent">
+    <h1 id="cubeWorldTitle">CubeWorld</h1>
+    <img src="images/CubeWorld.png" id="cubeImage" alt="Image of my CubeWorld game" />
+  </div>
+
+  <div id="loveSwipe" class="tabContent">
+    <h1 id="loveSwipeTitle">LoveSwipe</h1>
+    <img src="images/LoveSwipe.png" id="loveImage" alt="Image of my LoveSwipe prototype" />
+  </div>
+
+  <!-- CONTACT -->
+  <div id="ContactPage" class="tabContent">
+    <h1 id="ContactPageTitle">Contact</h1>
+    <p id="ContactPageParagraph">
+      You're welcome to contact me on the platforms below:
+      <br /><br />
+      Email: <a href="mailto:julie.janssen@sintlucasedu.nl">julie.janssen@sintlucasedu.nl</a>
+      <br />
+      Facebook: Julie Janssen
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="siteFooter">
+    <div class="footerInner">
+      <div class="footerBrand">
+        <h3>Julie Janssen</h3>
+        <p>
+          I design and build projects with a focus on friendly UX and clean development.
+          <br />
+          <strong>I’m the creator and owner of JourHelp.</strong>
+        </p>
+      </div>
+
+      <div class="footerLinks" aria-label="My websites">
+        <h4>My websites</h4>
+        <a href="https://juliejanssen.nl/clickbaitme" target="_blank" rel="noopener noreferrer">
+          juliejanssen.nl/clickbaitme
+        </a>
+        <a href="https://stimquest.nl" target="_blank" rel="noopener noreferrer">
+          stimquest.nl
+        </a>
+        <a href="https://jourhelp.nl" target="_blank" rel="noopener noreferrer">
+          jourhelp.nl
+        </a>
+        <p class="footerNote">All projects above were created by me.</p>
+      </div>
     </div>
 
-    <div class="translate-container">
-      <h3 class="translate-heading">🌍 Translate This Page</h3>
-      <div id="google_translate_element"></div>
+    <div class="footerBottom">
+      <span>© <span id="year"></span> Julie Janssen • Portfolio</span>
     </div>
-    <!--GoogleTranslate option-->
-    <script type="text/javascript">
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement(
-          {
-            pageLanguage: "en",
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-            autoDisplay: false,
-          },
-          "google_translate_element"
-        );
-      }
-    </script>
+  </footer>
 
-    <div id="HomePage" class="tabContent">
-      <!-- Image for introduction -->
-      <img
-        src="images/Julie - Copy.png"
-        id="ImageIntroduction"
-        style="max-width: 100%; height: auto"
-      />
-      <h2 id="myName">Julie Janssen</h2>
-      <p
-        id="introText"
-        style="
-          text-align: left;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        "
-      >
-        Welcome to my portfolio website, <br />
-        My name is Julie Janssen. <br />
-        I'm 20 years old and I study software <br />
-        development at SintLucas in Eindhoven. <br />
-        <br />
-        My hobbies are writing stories, socializing, and <br />
-        listening to music. <br />
-        I want to become a web developer, but I'm also <br />
-        quite interested in game development. <br />
-        The coding languages I've learned so far are: <br />
-        C#, JavaScript, HTML, CSS and a little bit of PHP.
-        <br />
-        I also have a small base of Blender skills. These <br />
-        skills can however be expanded if required. <br />
-        The reason why you as a business might want to look <br />
-        into hiring me is because I'm willing to <br />
-        learn and try new things, I have a lot of respect <br />
-        for others, and I'm always open to working in a team. <br />
-        <br />
-        Please feel more than welcome to look at the work <br />
-        I'm showcasing on my website. <br />
-        You can find my contact information on the contact page. <br />
-      </p>
-    </div>
+  <script src="script.js"></script>
+  <script
+    type="text/javascript"
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+  ></script>
 
-    <div id="Pong" class="tabContent">
-      <h1 id="PongTitle">PongGame</h1>
-      <img
-        src="images/Pong.png"
-        id="PongImage"
-        alt="Image of my pong game"
-        style="max-width: 100%; height: auto"
-      />
-      <p
-        id="PongParagraph"
-        style="
-          text-align: left;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        "
-      >
-        For this project I made a pong game using Unity and C# scripts. The goal
-        of this project was to get familiar
-        <br />
-        with Unity and with the coding language C#. During this process I
-        learned how to make objects in Unity (for <br />
-        example the border), scene switching (from main menu to the actual game
-        screen), I learned how to make a C# <br />
-        script and how to use it, and how to use the particle system.
-      </p>
-    </div>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
 
-    <div id="Ambition" class="tabContent">
-      <h1 id="AmbitionTitle">AmbitionProject</h1>
-      <img
-        src="images/Ambition.png"
-        id="AmbitionImage"
-        alt="Image of my ambition game"
-        style="max-width: 100%; height: auto"
-      />
-      <p
-        id="AmbitionParagraph"
-        style="
-          text-align: left;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        "
-      >
-        This project gave me as a student the perfect opportunity to learn new
-        things and explore my own skills as well
-        <br />
-        as my flaws. In this project I decided to make a start with 3D modeling
-        in Blender. This was a real challenge
-        <br />
-        for me, but I eventually got the hang of it. I managed to learn how to
-        make different shapes, how to give them
-        <br />
-        different colors, how to make the player unable to fall/walk through the
-        objects, I also learned how to use <br />
-        different tools in Blender, and in the end I learned how to import the
-        Blender files into Unity. This will be
-        <br />
-        useful for future projects in Blender, because now I have a small base
-        to build upwards from.
-      </p>
-    </div>
-
-    <div id="FirstPerson" class="tabContent">
-      <h1 id="FirstPersonTitle">FirstPersonShooter</h1>
-      <img
-        src="images/FirstPerson.png"
-        id="FirstPersonImage"
-        alt="Image of my first person shooter"
-        style="max-width: 100%; height: auto"
-      />
-      <p
-        id="FirstPersonParagraph"
-        style="
-          text-align: left;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        "
-      >
-        The first person shooter project taught me how to make objects spawn and
-        how to turn them into the functioning <br />
-        in-game enemies of the player. The other new skill that I developed
-        during this project is to make terrains and
-        <br />
-        how to customize them. For the player scripts I learned to make it a
-        functional player object which also carries
-        <br />
-        a speed and a camera point of view. In these scripts I used the C#
-        coding language. I also learned how to adjust
-        <br />
-        the height of the player to the terrain it’s walking on and how to stop
-        the player from going through the in-game objects.
-      </p>
-    </div>
-
-    <div id="MobileGame" class="tabContent">
-      <h1 id="MobileGameTitle">MobileGame</h1>
-      <img
-        src="images/MobileGame.png"
-        id="MobileGameImage"
-        alt="Image of my mobile game"
-        style="max-width: 100%; height: auto"
-      />
-      <p
-        id="MobileGameParagraph"
-        style="
-          text-align: left;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        "
-      >
-        For this project I attempted to make a mobile game for Android devices.
-        I started by downloading assets and experimenting with their functions.
-        <br />
-        This way I was able to customize the controls and add my own elements as
-        well. I added buttons which were meant to move the player to the left
-        <br />
-        or the right. I used C# coding language for that, but the camera was
-        causing a lot of troubles meant that one of the buttons was out of
-        frame. <br />
-        The other problem was that the camera wouldn’t move an inch. This
-        eventually became the end of the project, but even though the project
-        itself <br />
-        didn’t succeed. I was still able to learn how to use assets, how to
-        figure out their functions and abilities, and I was able to find the
-        things <br />
-        I still had difficulties with (this gave me the chance to focus on these
-        difficulties in the following project).
-      </p>
-    </div>
-
-    <div id="Wandering" class="tabContent">
-      <h1 id="WanderingTitle">MindfulWandering</h1>
-      <img
-        src="images/MindfulWandering.png"
-        id="MindfulWanderingImage"
-        alt="Image of my mindfulWandering game"
-        style="max-width: 100%; height: auto"
-      />
-      <p
-        id="MindfulWanderingParagraph"
-        style="
-          text-align: left;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        "
-      >
-        During this project I made a game which allows the player to explore a
-        peaceful surrounding environment. There are no activities for the
-        player, <br />
-        which allows them to truly find their peace while playing the game. The
-        most difficult part of this project was to make the player and camera
-        movement <br />
-        work, which ended up being the part where the project stalled. I used
-        scripts with C# coding language and I developed the game in Unity.
-        <br />
-      </p>
-    </div>
-
-    <div id="OnTheGo" class="tabContent">
-      <h1 id="OnTheGoTitle">MentalHealthOnTheGo</h1>
-      <img
-        src="images/OnTheGo.png"
-        id="OnTheGoImage"
-        alt="Image of my mental health on the go game"
-        style="max-width: 100%; height: auto"
-      />
-      <p
-        id="OnTheGoParagraph"
-        style="
-          text-align: left;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        "
-      >
-        For this project I wanted to create an app that can give you information
-        and tips on the mental struggles you’re facing or someone in your social
-        <br />
-        circle is facing. It is made with the coding language C# and was meant
-        to be usable for mobile users. There were difficulties with the screen
-        size, <br />
-        letter size, and the scene switching. The scene switching is something I
-        was able to work through for most scenes. I learned how to trust the
-        process <br />
-        and how to find the information I need online. <br />
-      </p>
-    </div>
-
-    <div id="PointAndClick" class="tabContent">
-      <h1 id="PointAndClickTitle">PointAndClick</h1>
-      <img
-        src="images/PointAndClick.png"
-        id="PointAndClickImage"
-        alt="Image of my point and click game"
-        style="max-width: 100%; height: auto"
-      />
-      <p
-        id="PointAndClickParagraph"
-        style="
-          text-align: left;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        "
-      >
-        This project was my introduction to GitHub. I learned how to upload my
-        projects to my GitHub profile and how to push changes to update it.
-        During this project <br />
-        I worked with the HTML, css, and Javascript coding languages. I worked
-        with interactive surfaces the user can click on to get a dialogue to
-        show up. The tile <br />
-        map was made with PhotoShop and the objects were sized down and up to
-        get to this result. <br />
-      </p>
-    </div>
-
-    <div id="BlenderCharacter" class="tabContent">
-      <h1 id="BlenderCharacterTitle">BlenderCharacter</h1>
-      <img
-        src="images/BlenderCharacter.png"
-        id="BlenderCharacterImage"
-        alt="Image of my blender character"
-        style="max-width: 100%; height: auto"
-      />
-      <p
-        id="BlenderCharacterParagraph"
-        style="
-          text-align: left;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        "
-      >
-        During the Ambition project I made a character in Blender. The goal I
-        set for myself was to develop a simple base in the software, <br />
-        so I would be able to use it in the <br />
-        future. This turned out to be way more difficult than I expected, but it
-        taught me how to actually follow tutorials and how to <br />
-        explore the software on my own beforehand. <br />
-      </p>
-    </div>
-
-    <div id="textGame" class="tabContent">
-      <h1 id="titleTextGame">TextBasedGame</h1>
-      <img
-        src="images/TextGameInteractive.png"
-        id="textGameImage"
-        alt="Image of my text based game"
-        style="max-width: 100%; height: auto"
-      />
-      <p
-        id="textGameParagraph"
-        style="
-          text-align: left;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        "
-      >
-        With this assignment I made a text based game that allows interaction
-        from the user who can decide what <br />
-        action they'll be doing to play through the story. I used the coding
-        language C# for this project. <br />
-        During this project I learned how to work with user input and how to
-        change the story outcome based on that input.
-      </p>
-    </div>
-
-    <div id="ContactPage" class="tabContent">
-      <h1 id="ContactPageTitle">ContactPage</h1>
-      <p
-        id="ContactPageParagraph"
-        style="
-          text-align: left;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        "
-      >
-        You're welcome to contact me on the social platforms mentioned below:
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        Email: julie.janssen@sintlucasedu.nl <br />
-        Facebook: Julie Janssen
-      </p>
-    </div>
-
-    <div id="BestWork" class="tabContent">
-      <h1 id="BestWorkPageTitle">My best work</h1>
-      <p
-        id="BestWorkParagraph"
-        style="
-          text-align: left;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        "
-      >
-        These are the projects I'm most proud of :
-      </p>
-      <img
-        src="images/PointAndClick.png"
-        class="imagesRow"
-        style="max-width: 100%; height: auto"
-      />
-      <h2>Point and click</h2>
-      <img
-        src="images/TextGameInteractive.png"
-        class="imagesRow"
-        style="max-width: 100%; height: auto"
-      />
-      <h2>Text game</h2>
-      <img
-        src="images/MentalHealthWeekProject.png"
-        id="mentalhealthImg"
-        style="max-width: 100%; height: auto"
-      />
-      <h2>Mentalhealth week project</h2>
-    </div>
-
-    <div id="webshop" class="tabContent">
-      <h1 id="webshopTitle">PongGame</h1>
-      <img
-        src="images/Webshop.png"
-        id="webshopImage"
-        alt="Image of my webshop"
-        style="max-width: 100%; height: auto"
-      />
-      <p
-        id="webshopParagraph"
-        style="
-          text-align: left;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        "
-      ></p>
-    </div>
-
-    <div id="projectPlay" class="tabContent">
-      <h1 id="playTitle">SweetSweep</h1>
-      <img
-        src="images/Play.png"
-        id="PlayImage"
-        alt="Image of Project Play"
-        style="max-width: 50%; height: auto"
-      />
-    </div>
-
-    <div id="effenaar" class="tabContent">
-      <h1 id="effenaarTitle">Effenaar</h1>
-      <img
-        src="images/EffenaarScreen.png"
-        id="effenaarImage"
-        alt="Image of the effenaar assignment"
-        style="max-width: 100%; height: auto"
-      />
-    </div>
-
-    <div id="cubeWorld" class="tabContent">
-      <h1 id="cubeWorldTitle">CubeWorld</h1>
-      <img
-        src="images/CubeWorld.png"
-        id="cubeImage"
-        alt="Image of my CubeWorld game"
-        style="max-width: 50%; height: auto"
-      />
-    </div>
-
-    <div id="loveSwipe" class="tabContent">
-      <h1 id="loveSwipeTitle">LoveSwipe</h1>
-      <img
-        src="images/LoveSwipe.png"
-        id="loveImage"
-        alt="Image of my LoveSwipe prototype"
-        style="max-width: 100%; height: auto"
-      />
-    </div>
-
-    <script src="script.js"></script>
-    <script
-      type="text/javascript"
-      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-    ></script>
-    <!--GoogleTranslate option-->
-  </body>
 </html>
