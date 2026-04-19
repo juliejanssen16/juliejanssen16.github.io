@@ -63,6 +63,7 @@
   <button id="buttonCube" class="bubbly-button tablinks" role="menuitem" onclick="openTab(event, 'cubeWorld')">CubeWorld</button>
   <button id="buttonLove" class="bubbly-button tablinks" role="menuitem" onclick="openTab(event, 'loveSwipe')">LoveSwipe</button>
 </div>
+      </div>
 
       <button id="buttonHome" class="bubbly-button tablinks" onclick="openTab(event, 'HomePage')">Home</button>
       <button id="buttonContactPage" class="bubbly-button tablinks" onclick="openTab(event, 'ContactPage')">Contact</button>
@@ -91,7 +92,7 @@
   <!-- HOME -->
   <div id="HomePage" class="tabContent">
     <section class="hero">
-      <img src="images/Julie - Copy.png" id="ImageIntroduction" alt="Photo of Julie Janssen" />
+      <img src="images/Julie%20-%20Copy.png" id="ImageIntroduction" alt="Photo of Julie Janssen" />
 
       <div class="heroText">
         <h2 id="myName">Julie Janssen</h2>
@@ -284,34 +285,77 @@
 
   <!-- FOOTER -->
   <footer class="siteFooter">
-    <div class="footerInner">
-      <div class="footerBrand">
-        <h3>Julie Janssen</h3>
+    <div class="footerIntro">
+      <div>
+        <h3>Need a friendly place to start?</h3>
         <p>
-          I design and build projects with a focus on friendly UX and clean development.
-          <br />
-          <strong>I’m the creator and owner of JourHelp.</strong>
+          Julie Janssen shares portfolio projects, school work, and personal development.
+          Built with care, curiosity, and a love for friendly digital experiences.
         </p>
+        <a href="mailto:julie.janssen@sintlucasedu.nl">julie.janssen@sintlucasedu.nl</a>
       </div>
 
-      <div class="footerLinks" aria-label="My websites">
-        <h4>My websites</h4>
-        <a href="https://juliejanssen.nl/clickbaitme" target="_blank" rel="noopener noreferrer">
-          juliejanssen.nl/clickbaitme
-        </a>
-        <a href="https://stimquest.nl" target="_blank" rel="noopener noreferrer">
-          stimquest.nl
-        </a>
-        <a href="https://jourhelp.nl" target="_blank" rel="noopener noreferrer">
-          jourhelp.nl
-        </a>
-        <p class="footerNote">All projects above were created by me.</p>
+      <form class="footerContact" action="mailto:julie.janssen@sintlucasedu.nl" method="post" enctype="text/plain">
+        <h3>Contact me</h3>
+        <p>Send a short note about feedback, collaboration, or a project question.</p>
+        <div class="footerFormRow">
+          <input type="text" name="name" placeholder="Name" aria-label="Name" />
+          <input type="email" name="email" placeholder="E-mail address" aria-label="E-mail address" />
+        </div>
+        <textarea name="message" placeholder="How can I help?" aria-label="How can I help?"></textarea>
+        <button type="submit">Send request</button>
+      </form>
+    </div>
+
+    <div class="footerInner">
+      <nav class="footerLinks" aria-label="Learn">
+        <h4>Learn</h4>
+        <a href="#" onclick="openTab(event, 'HomePage')">About me</a>
+        <a href="#" onclick="openTab(event, 'BestWork')">Best work</a>
+        <a href="#" onclick="openTab(event, 'ContactPage')">Contact</a>
+      </nav>
+
+      <nav class="footerLinks" aria-label="Projects">
+        <h4>Projects</h4>
+        <a href="#" onclick="openTab(event, 'Pong')">Pong</a>
+        <a href="#" onclick="openTab(event, 'webshop')">Webshop</a>
+        <a href="#" onclick="openTab(event, 'cubeWorld')">CubeWorld</a>
+        <a href="#" onclick="openTab(event, 'mentalHealthWeek')">MentalHealthWeek</a>
+      </nav>
+
+      <nav class="footerLinks" aria-label="Community">
+        <h4>Community</h4>
+        <a href="https://jourhelp.nl" target="_blank" rel="noopener noreferrer">JourHelp</a>
+        <a href="https://stimquest.nl" target="_blank" rel="noopener noreferrer">StimQuest</a>
+        <a href="https://juliejanssen.nl/clickbaitme" target="_blank" rel="noopener noreferrer">ClickbaitMe</a>
+        <a href="https://www.spari.app/special-thanks" target="_blank" rel="noopener noreferrer">Reference</a>
+      </nav>
+
+      <div class="footerLinks footerSupport">
+        <h4>Follow &amp; support</h4>
+        <div class="footerSocials" aria-label="Social initials">
+          <span>D</span>
+          <span>@</span>
+          <span>J</span>
+        </div>
+        <a class="footerButton" href="https://jourhelp.nl" target="_blank" rel="noopener noreferrer">Visit JourHelp</a>
+        <div class="footerTags" aria-label="Skills">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>C#</span>
+        </div>
       </div>
     </div>
+
+    <div class="footerBrandWord" aria-hidden="true">JULIE JANSSEN</div>
 
     <div class="footerBottom">
-      <span>© <span id="year"></span> Julie Janssen • Portfolio</span>
+      <span>Made with care by <strong>Julie Janssen</strong>.</span>
+      <span>© <span id="year"></span> Julie Janssen. Portfolio and project archive.</span>
     </div>
+
+    <a class="footerTop" href="#" aria-label="Back to top">↑</a>
   </footer>
 
   <script src="script.js"></script>

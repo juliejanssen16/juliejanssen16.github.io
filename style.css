@@ -204,15 +204,15 @@ body {
 }
 
 .tabContent h1 {
-  font-size: clamp(1.8rem, 3.4vw, 2.4rem);
+  font-size: 2.4rem;
   color: var(--pink2);
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   margin-bottom: 14px;
   font-weight: 700;
 }
 
 .tabContent h2 {
-  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-size: 1.6rem;
   color: var(--pink);
   margin: 18px 0 10px;
   font-weight: 700;
@@ -262,10 +262,10 @@ body {
 
 #myName {
   margin: 0;
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-size: 2.6rem;
   font-weight: 800;
   color: var(--pink2);
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
 }
 
 .subtitle {
@@ -485,73 +485,211 @@ body {
 
 /* ===== FOOTER ===== */
 .siteFooter {
-  margin-top: 30px;
-  padding: 34px 18px 18px;
-  background: rgba(255, 255, 255, 0.55);
-  border-top: 1px solid rgba(236, 72, 153, 0.14);
-  backdrop-filter: blur(14px);
+  position: relative;
+  margin-top: 42px;
+  padding: 58px 18px 22px;
+  background: #090a0d;
+  color: rgba(255, 255, 255, 0.72);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: left;
+  overflow: hidden;
+}
+
+.footerIntro {
+  max-width: 1020px;
+  margin: 0 auto 46px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 74px;
+  align-items: start;
+}
+
+.footerIntro h3,
+.footerContact h3,
+.footerLinks h4 {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.footerIntro p,
+.footerContact p {
+  max-width: 460px;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  margin-bottom: 6px;
+}
+
+.footerIntro a {
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footerIntro a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.footerContact {
+  width: 100%;
+}
+
+.footerFormRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.footerContact input,
+.footerContact textarea {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.94);
+  color: #111217;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  padding: 12px 14px;
+  outline: none;
+}
+
+.footerContact textarea {
+  min-height: 70px;
+  resize: vertical;
+  display: block;
+}
+
+.footerContact button,
+.footerButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  min-height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.94);
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  padding: 0 18px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.footerContact button:hover,
+.footerButton:hover {
+  background: white;
+  color: #090a0d;
+  transform: translateY(-1px);
 }
 
 .footerInner {
-  max-width: 980px;
+  max-width: 1020px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 18px;
-  text-align: left;
-  padding: 18px;
-  border-radius: 20px;
-  border: 1px solid rgba(236, 72, 153, 0.12);
-  background: rgba(255, 255, 255, 0.55);
-  box-shadow: var(--shadowSoft);
-}
-
-.footerBrand h3 {
-  margin-bottom: 8px;
-  color: var(--pink2);
-  font-size: 1.25rem;
-}
-
-.footerBrand p {
-  color: var(--muted);
-  line-height: 1.8;
-}
-
-.footerLinks h4 {
-  margin-bottom: 10px;
-  color: rgba(36, 26, 34, 0.9);
+  grid-template-columns: repeat(4, 1fr);
+  gap: 38px;
+  padding: 38px 0 34px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footerLinks a {
   display: block;
-  margin: 8px 0;
-  color: rgba(36, 26, 34, 0.85);
+  width: fit-content;
+  margin: 7px 0;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.93rem;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 500;
   transition: transform 160ms ease, color 160ms ease;
 }
 
 .footerLinks a:hover {
-  color: var(--pink2);
-  transform: translateX(2px);
+  color: white;
+  transform: translateX(3px);
   text-decoration: underline;
 }
 
-.footerNote {
-  margin-top: 12px;
-  color: rgba(36, 26, 34, 0.6);
-  font-size: 0.92rem;
-  font-weight: 600;
+.footerSocials {
+  display: flex;
+  gap: 20px;
+  margin: 2px 0 20px;
+}
+
+.footerSocials span {
+  color: rgba(255, 255, 255, 0.86);
+  font-weight: 800;
+}
+
+.footerTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.footerTags span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0 8px;
+}
+
+.footerBrandWord {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.42);
+  text-stroke: 1px rgba(255, 255, 255, 0.42);
+  font-size: 7rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 0.95;
+  white-space: nowrap;
 }
 
 .footerBottom {
-  max-width: 980px;
-  margin: 14px auto 0;
-  padding-top: 14px;
-  border-top: 1px solid rgba(236, 72, 153, 0.12);
-  color: rgba(36, 26, 34, 0.55);
-  font-weight: 700;
-  text-align: center;
+  max-width: 1020px;
+  margin: 18px auto 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  color: rgba(255, 255, 255, 0.46);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.footerBottom strong {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footerTop {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #090a0d;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
 }
 
 /* ===== RESPONSIVE ===== */
@@ -564,12 +702,34 @@ body {
     padding: 36px 18px;
   }
 
-  .footerInner {
+  .footerIntro {
     grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footerInner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footerBrandWord {
+    font-size: 4.6rem;
+    white-space: normal;
   }
 }
 
 @media (max-width: 640px) {
+  .tabContent h1 {
+    font-size: 2rem;
+  }
+
+  .tabContent h2 {
+    font-size: 1.35rem;
+  }
+
+  #myName {
+    font-size: 2.2rem;
+  }
+
   .hero {
     grid-template-columns: 1fr;
     text-align: center;
@@ -602,6 +762,28 @@ body {
   .tabContent p {
     font-size: 1rem;
     line-height: 1.85;
+  }
+
+  .siteFooter {
+    padding: 42px 18px 24px;
+  }
+
+  .footerFormRow,
+  .footerInner {
+    grid-template-columns: 1fr;
+  }
+
+  .footerInner {
+    gap: 24px;
+  }
+
+  .footerBrandWord {
+    font-size: 3.2rem;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    padding-right: 48px;
   }
 }
 
