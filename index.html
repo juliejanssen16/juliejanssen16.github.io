@@ -48,6 +48,9 @@
 >
   <!-- keep your buttons exactly the same inside -->
   <button id="buttonBestWork" class="bubbly-button tablinks" role="menuitem" data-menu-copy="A quick path to the projects I am most proud of." onclick="openTab(event, 'BestWork')">Best Work</button>
+  <button id="buttonJourHelpOCD" class="bubbly-button tablinks" role="menuitem" data-menu-copy="A calm OCD awareness guide on JourHelp." onclick="openTab(event, 'jourHelpOCD')">JourHelp OCD Guide</button>
+  <button id="buttonStimQuest" class="bubbly-button tablinks" role="menuitem" data-menu-copy="A gentle fidget-finding game made for StimQuest." onclick="openTab(event, 'stimQuest')">StimQuest</button>
+  <button id="buttonClickbaitMe" class="bubbly-button tablinks" role="menuitem" data-menu-copy="A webgame about not trusting every instruction." onclick="openTab(event, 'clickbaitMe')">ClickbaitMe</button>
   <button id="buttonPong" class="bubbly-button tablinks" role="menuitem" data-menu-copy="Unity practice with movement, collision, and score logic." onclick="openTab(event, 'Pong')">Pong</button>
   <button id="buttonAmbition" class="bubbly-button tablinks" role="menuitem" data-menu-copy="A project about direction, goals, and future work." onclick="openTab(event, 'Ambition')">Ambition Project</button>
   <button id="buttonFirstPerson" class="bubbly-button tablinks" role="menuitem" data-menu-copy="A first-person prototype with player controls." onclick="openTab(event, 'FirstPerson')">First Person Shooter</button>
@@ -181,37 +184,74 @@
 	    </div>
 
 	    <div class="projectGrid">
-	      <article class="projectCard" data-category="web">
-	        <img src="images/PointAndClick.png" alt="Screenshot of Point and Click project" />
-	        <div class="projectBody">
-	          <h2>Point & Click</h2>
-	          <p>Interactive click-based experience using HTML, CSS and JavaScript, with clickable areas, dialogue, and GitHub workflow practice.</p>
-          <button class="linkBtn tablinks" onclick="openTab(event, 'PointAndClick')">Open project →</button>
-        </div>
-      </article>
-
-	      <article class="projectCard" data-category="game">
-	        <img src="images/TextGameInteractive.png" alt="Screenshot of Text Game project" />
-	        <div class="projectBody">
-	          <h2>Text Game</h2>
-	          <p>C# text-based game with branching choices, different outcomes, and practice in planning logic around player input.</p>
-          <button class="linkBtn tablinks" onclick="openTab(event, 'textGame')">Open project →</button>
-        </div>
-      </article>
-
 	      <article class="projectCard" data-category="support web">
-	        <img src="images/MentalHealthWeekProject.png" alt="Screenshot of Mental health week project" />
+	        <img src="images/JourHelpOCDGuide.png" alt="Screenshot of the JourHelp OCD guide" />
 	        <div class="projectBody">
-	          <h2>Mentalhealth week project</h2>
-	          <p>Project focused on mental health awareness, calm visual choices, and supportive information that feels easy to read.</p>
-          <button class="linkBtn tablinks" onclick="openTab(event, 'mentalHealthWeek')">Open project →</button>
-        </div>
-      </article>
-    </div>
-  </div>
+	          <h2>JourHelp OCD Guide</h2>
+	          <p>Awareness guide about OCD with calm explanations, accessible sections, and supportive information for readers.</p>
+	          <button class="linkBtn tablinks" onclick="openTab(event, 'jourHelpOCD')">Open project →</button>
+	        </div>
+	      </article>
 
-  <!-- EXISTING PROJECT TABS (your content, lightly tidied) -->
-  <div id="Pong" class="tabContent">
+	      <article class="projectCard" data-category="support web game">
+	        <img src="images/StimQuestFidgetFinder.png" alt="Screenshot of the StimQuest fidget finder" />
+	        <div class="projectBody">
+	          <h2>StimQuest</h2>
+	          <p>Fidget Finder is a soft interactive webgame where users find hidden fidgets and keep them in a tray.</p>
+	          <button class="linkBtn tablinks" onclick="openTab(event, 'stimQuest')">Open project →</button>
+	        </div>
+	      </article>
+
+	      <article class="projectCard" data-category="web game">
+	        <img src="images/ClickbaitMe.png" alt="Screenshot of the ClickbaitMe webgame" />
+	        <div class="projectBody">
+	          <h2>ClickbaitMe</h2>
+	          <p>A playful webgame about misleading instructions, quick reactions, levels, score, and a little chaos.</p>
+	          <button class="linkBtn tablinks" onclick="openTab(event, 'clickbaitMe')">Open project →</button>
+	        </div>
+	      </article>
+
+	    </div>
+	  </div>
+
+	  <!-- EXISTING PROJECT TABS (your content, lightly tidied) -->
+	  <div id="jourHelpOCD" class="tabContent">
+	    <h1 id="jourHelpOCDTitle">JourHelp OCD Guide</h1>
+	    <img src="images/JourHelpOCDGuide.png" id="jourHelpOCDImage" alt="Screenshot of the JourHelp OCD guide" />
+	    <p id="jourHelpOCDParagraph">
+	      The JourHelp OCD Guide is part of JourHelp, my own website about OCD and autism.
+	      I made this page to explain OCD in a calm and informative way, with sections about what OCD is, different
+	      types, symptoms, treatment, personal stories, and coping strategies. The goal was to make the information
+	      feel compassionate and easier to start reading, especially for people who may already feel overwhelmed.
+	    </p>
+	    <a class="projectVisitLink" href="https://jourhelp.nl/#undefinedocd-home" target="_blank" rel="noopener noreferrer">Visit project</a>
+	  </div>
+
+	  <div id="stimQuest" class="tabContent">
+	    <h1 id="stimQuestTitle">StimQuest</h1>
+	    <img src="images/StimQuestFidgetFinder.png" id="stimQuestImage" alt="Screenshot of the StimQuest fidget finder" />
+	    <p id="stimQuestParagraph">
+	      StimQuest is a gentle fidget-finding webgame. The player searches a soft, pastel scene for hidden fidgets
+	      and collects them in a tray. I focused on creating a low-pressure interaction with no timer, simple controls,
+	      and a calm visual style. This project helped me practice playful web interaction while still keeping the
+	      experience relaxed and sensory-friendly.
+	    </p>
+	    <a class="projectVisitLink" href="https://stimquest.nl" target="_blank" rel="noopener noreferrer">Visit project</a>
+	  </div>
+
+	  <div id="clickbaitMe" class="tabContent">
+	    <h1 id="clickbaitMeTitle">ClickbaitMe</h1>
+	    <img src="images/ClickbaitMe.png" id="clickbaitMeImage" alt="Screenshot of the ClickbaitMe webgame" />
+	    <p id="clickbaitMeParagraph">
+	      ClickbaitMe is a webgame built around misleading instructions and playful chaos.
+	      The player has to react to instructions, but the game is not always honest about what it wants.
+	      I worked on the interface, score, levels, streak system, and the overall joke of the experience.
+	      It was a fun way to practice JavaScript logic, feedback, and making a small browser game feel complete.
+	    </p>
+	    <a class="projectVisitLink" href="https://juliejanssen.nl/clickbaitme/" target="_blank" rel="noopener noreferrer">Visit project</a>
+	  </div>
+
+	  <div id="Pong" class="tabContent">
     <h1 id="PongTitle">PongGame</h1>
     <img src="images/Pong.png" id="PongImage" alt="Image of my pong game" />
 	    <p id="PongParagraph">
