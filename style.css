@@ -290,6 +290,20 @@ body {
   box-shadow: 0 16px 30px rgba(36, 26, 34, 0.12);
 }
 
+.projectScreenshotGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin: 18px 0 8px;
+}
+
+.projectScreenshotGrid img {
+  height: 230px;
+  width: 100%;
+  object-fit: cover;
+  margin: 0;
+}
+
 /* ===== HERO ===== */
 .hero {
   display: grid;
@@ -949,6 +963,14 @@ body {
 
   .projectGrid {
     grid-template-columns: 1fr;
+  }
+
+  .projectScreenshotGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .projectScreenshotGrid img {
+    height: auto;
   }
 
   .timelineList {
