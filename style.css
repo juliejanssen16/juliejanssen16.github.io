@@ -297,11 +297,23 @@ body {
   margin: 18px 0 8px;
 }
 
+.projectScreenshotGrid figure {
+  margin: 0;
+  text-align: left;
+}
+
 .projectScreenshotGrid img {
   height: 230px;
   width: 100%;
   object-fit: cover;
   margin: 0;
+}
+
+.projectScreenshotGrid figcaption {
+  margin-top: 8px;
+  color: rgba(36, 26, 34, 0.62);
+  font-size: 0.9rem;
+  font-weight: 700;
 }
 
 /* ===== HERO ===== */
@@ -376,6 +388,29 @@ body {
   align-items: center;
 }
 
+.featureTitleRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.featureTitleRow h1 {
+  margin-bottom: 0;
+}
+
+.ownerBadge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  border-radius: 8px;
+  background: rgba(236, 72, 153, 0.13);
+  color: var(--pink2);
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 0 10px;
+}
+
 .sectionEyebrow {
   display: inline-block;
   margin-bottom: 6px;
@@ -408,6 +443,35 @@ body {
 .featureLink:hover {
   transform: translateY(-2px);
   box-shadow: 0 16px 22px rgba(219, 39, 119, 0.28);
+}
+
+.portfolioStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.statItem {
+  border: 1px solid rgba(236, 72, 153, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.56);
+  padding: 18px;
+  text-align: left;
+}
+
+.statItem strong {
+  display: block;
+  color: var(--pink2);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.statItem span {
+  display: block;
+  margin-top: 8px;
+  color: rgba(36, 26, 34, 0.66);
+  font-weight: 800;
 }
 
 .timelineList {
@@ -532,6 +596,22 @@ body {
 
 .projectCard.is-hidden {
   display: none;
+}
+
+.bestWorkCta {
+  margin-top: 26px;
+  border: 1px solid rgba(236, 72, 153, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.58);
+  padding: 22px;
+}
+
+.bestWorkCta h2 {
+  margin-top: 0;
+}
+
+.bestWorkCta p {
+  margin-bottom: 14px;
 }
 
 .projectCard img {
@@ -908,6 +988,10 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .portfolioStats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .tabContent {
     padding: 36px 18px;
   }
@@ -974,6 +1058,10 @@ body {
   }
 
   .timelineList {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolioStats {
     grid-template-columns: 1fr;
   }
 

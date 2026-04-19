@@ -133,7 +133,10 @@
 	    <section class="jourHelpFeature" aria-labelledby="jourHelpTitle">
 	      <div>
 	        <span class="sectionEyebrow">My own platform</span>
-	        <h1 id="jourHelpTitle">JourHelp</h1>
+	        <div class="featureTitleRow">
+	          <h1 id="jourHelpTitle">JourHelp</h1>
+	          <span class="ownerBadge">Owner of JourHelp</span>
+	        </div>
 	        <p>
 	          JourHelp is my website for calm, personal information about OCD and autism.
 	          I created it because I care about clear support, gentle design, and making
@@ -141,6 +144,21 @@
 	        </p>
 	      </div>
 	      <a class="featureLink" href="https://jourhelp.nl" target="_blank" rel="noopener noreferrer">Visit JourHelp</a>
+	    </section>
+
+	    <section class="portfolioStats" aria-label="Portfolio highlights">
+	      <div class="statItem">
+	        <strong>15+</strong>
+	        <span>Projects</span>
+	      </div>
+	      <div class="statItem">
+	        <strong>3</strong>
+	        <span>Live websites</span>
+	      </div>
+	      <div class="statItem">
+	        <strong>2</strong>
+	        <span>Support guides</span>
+	      </div>
 	    </section>
 
 	    <section class="learningTimeline" aria-labelledby="timelineTitle">
@@ -212,14 +230,25 @@
 	      </article>
 
 	    </div>
+	    <div class="bestWorkCta">
+	      <h2>Want to ask about one of these projects?</h2>
+	      <p>I’m happy to talk about my process, what I learned, or how I built them.</p>
+	      <button class="bubbly-button tablinks" onclick="openTab(event, 'ContactPage')">Contact me</button>
+	    </div>
 	  </div>
 
 	  <!-- EXISTING PROJECT TABS (your content, lightly tidied) -->
 	  <div id="jourHelpOCD" class="tabContent">
 	    <h1 id="jourHelpOCDTitle">JourHelp Guides</h1>
-	    <div class="projectScreenshotGrid">
-	      <img src="images/JourHelpOCDGuide.png" id="jourHelpOCDImage" alt="Screenshot of the JourHelp OCD guide" />
-	      <img src="images/JourHelpAutismGuide.png" id="jourHelpAutismImage" alt="Screenshot of the JourHelp autism guide" />
+	    <div class="projectScreenshotGrid" aria-label="JourHelp screenshot gallery">
+	      <figure>
+	        <img src="images/JourHelpOCDGuide.png" id="jourHelpOCDImage" alt="Screenshot of the JourHelp OCD guide" />
+	        <figcaption>OCD awareness guide</figcaption>
+	      </figure>
+	      <figure>
+	        <img src="images/JourHelpAutismGuide.png" id="jourHelpAutismImage" alt="Screenshot of the JourHelp autism guide" />
+	        <figcaption>Autism awareness guide</figcaption>
+	      </figure>
 	    </div>
 	    <p id="jourHelpOCDParagraph">
 	      The JourHelp guides are part of JourHelp, my own website about OCD and autism.
@@ -471,13 +500,16 @@
         <a href="#" onclick="openTab(event, 'mentalHealthWeek')">MentalHealthWeek</a>
       </nav>
 
-      <nav class="footerLinks" aria-label="Community">
-        <h4>Community</h4>
-        <a href="https://jourhelp.nl" target="_blank" rel="noopener noreferrer">JourHelp</a>
-        <a href="https://stimquest.nl" target="_blank" rel="noopener noreferrer">StimQuest</a>
-        <a href="https://juliejanssen.nl/clickbaitme" target="_blank" rel="noopener noreferrer">ClickbaitMe</a>
-        <a href="https://www.spari.app/special-thanks" target="_blank" rel="noopener noreferrer">Reference</a>
-      </nav>
+	      <nav class="footerLinks" aria-label="Live projects">
+	        <h4>Live projects</h4>
+	        <a href="https://jourhelp.nl" target="_blank" rel="noopener noreferrer">JourHelp</a>
+	        <a href="https://stimquest.nl" target="_blank" rel="noopener noreferrer">StimQuest</a>
+	        <a href="https://juliejanssen.nl/clickbaitme" target="_blank" rel="noopener noreferrer">ClickbaitMe</a>
+	        <a href="#" onclick="openTab(event, 'jourHelpOCD')">JourHelp portfolio page</a>
+	        <a href="#" onclick="openTab(event, 'stimQuest')">StimQuest portfolio page</a>
+	        <a href="#" onclick="openTab(event, 'clickbaitMe')">ClickbaitMe portfolio page</a>
+	        <a href="https://www.spari.app/special-thanks" target="_blank" rel="noopener noreferrer">Reference</a>
+	      </nav>
 
     </div>
 
