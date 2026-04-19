@@ -187,3 +187,24 @@ projectsBtn?.addEventListener("keydown", (e) => {
     if (!projectsMenuIsOpen()) openProjectsMenu({ focusFirst: true });
   }
 });
+
+// =====================
+// PROJECT FILTERS
+// =====================
+const filterButtons = document.querySelectorAll(".filterBtn");
+const projectCards = document.querySelectorAll(".projectCard");
+
+filterButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const filter = button.dataset.filter;
+
+    filterButtons.forEach((item) => item.classList.remove("active"));
+    button.classList.add("active");
+
+    projectCards.forEach((card) => {
+      const categories = card.dataset.category?.split(" ") || [];
+      const showCard = filter === "all" || categories.includes(filter);
+      card.classList.toggle("is-hidden", !showCard);
+    });
+  });
+});

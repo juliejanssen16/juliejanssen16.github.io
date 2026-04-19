@@ -120,42 +120,89 @@
           I’m willing to learn and try new things, I respect others, and I enjoy working in a team.
         </p>
 
-        <div class="heroActions">
-          <button class="bubbly-button tablinks" onclick="openTab(event, 'BestWork')">View best work</button>
-          <button class="bubbly-button tablinks" onclick="openTab(event, 'ContactPage')">Contact</button>
-        </div>
-      </div>
-    </section>
-  </div>
+	        <div class="heroActions">
+	          <button class="bubbly-button tablinks" onclick="openTab(event, 'BestWork')">View best work</button>
+	          <button class="bubbly-button tablinks" onclick="openTab(event, 'ContactPage')">Contact</button>
+	        </div>
+	      </div>
+	    </section>
+
+	    <section class="jourHelpFeature" aria-labelledby="jourHelpTitle">
+	      <div>
+	        <span class="sectionEyebrow">My own platform</span>
+	        <h1 id="jourHelpTitle">JourHelp</h1>
+	        <p>
+	          JourHelp is my website for calm, personal information about OCD and autism.
+	          I created it because I care about clear support, gentle design, and making
+	          information feel easier to start with.
+	        </p>
+	      </div>
+	      <a class="featureLink" href="https://jourhelp.nl" target="_blank" rel="noopener noreferrer">Visit JourHelp</a>
+	    </section>
+
+	    <section class="learningTimeline" aria-labelledby="timelineTitle">
+	      <span class="sectionEyebrow">My journey</span>
+	      <h1 id="timelineTitle">What I am building toward</h1>
+	      <div class="timelineList">
+	        <article class="timelineItem">
+	          <span>01</span>
+	          <h2>Started software development</h2>
+	          <p>I began learning how websites, games, and interactive projects are made.</p>
+	        </article>
+	        <article class="timelineItem">
+	          <span>02</span>
+	          <h2>Made school projects</h2>
+	          <p>I practiced HTML, CSS, JavaScript, C#, Unity, Blender, and GitHub workflow.</p>
+	        </article>
+	        <article class="timelineItem">
+	          <span>03</span>
+	          <h2>Created JourHelp</h2>
+	          <p>I started building a calm platform around OCD, autism, and personal support.</p>
+	        </article>
+	        <article class="timelineItem">
+	          <span>04</span>
+	          <h2>Growing my future</h2>
+	          <p>I want to keep learning web development and become an autism specialist.</p>
+	        </article>
+	      </div>
+	    </section>
+	  </div>
 
   <!-- BEST WORK (PROJECT GRID) -->
   <div id="BestWork" class="tabContent">
-    <h1 id="BestWorkPageTitle">My best work</h1>
-    <p id="BestWorkParagraph">These are the projects I’m most proud of:</p>
+	    <h1 id="BestWorkPageTitle">My best work</h1>
+	    <p id="BestWorkParagraph">These are the projects I’m most proud of:</p>
 
-    <div class="projectGrid">
-      <article class="projectCard">
-        <img src="images/PointAndClick.png" alt="Screenshot of Point and Click project" />
-        <div class="projectBody">
-          <h2>Point & Click</h2>
+	    <div class="projectFilters" aria-label="Filter projects">
+	      <button class="filterBtn active" type="button" data-filter="all">All</button>
+	      <button class="filterBtn" type="button" data-filter="web">Web</button>
+	      <button class="filterBtn" type="button" data-filter="game">Game</button>
+	      <button class="filterBtn" type="button" data-filter="support">Support</button>
+	    </div>
+
+	    <div class="projectGrid">
+	      <article class="projectCard" data-category="web">
+	        <img src="images/PointAndClick.png" alt="Screenshot of Point and Click project" />
+	        <div class="projectBody">
+	          <h2>Point & Click</h2>
           <p>Interactive click-based experience using HTML, CSS and JavaScript with GitHub workflow.</p>
           <button class="linkBtn tablinks" onclick="openTab(event, 'PointAndClick')">Open project →</button>
         </div>
       </article>
 
-      <article class="projectCard">
-        <img src="images/TextGameInteractive.png" alt="Screenshot of Text Game project" />
-        <div class="projectBody">
-          <h2>Text Game</h2>
+	      <article class="projectCard" data-category="game">
+	        <img src="images/TextGameInteractive.png" alt="Screenshot of Text Game project" />
+	        <div class="projectBody">
+	          <h2>Text Game</h2>
           <p>C# text-based game with branching story outcomes based on player input.</p>
           <button class="linkBtn tablinks" onclick="openTab(event, 'textGame')">Open project →</button>
         </div>
       </article>
 
-      <article class="projectCard">
-        <img src="images/MentalHealthWeekProject.png" alt="Screenshot of Mental health week project" />
-        <div class="projectBody">
-          <h2>Mentalhealth week project</h2>
+	      <article class="projectCard" data-category="support web">
+	        <img src="images/MentalHealthWeekProject.png" alt="Screenshot of Mental health week project" />
+	        <div class="projectBody">
+	          <h2>Mentalhealth week project</h2>
           <p>Project focused on mental health awareness and supportive UX choices.</p>
           <button class="linkBtn tablinks" onclick="openTab(event, 'mentalHealthWeek')">Open project →</button>
         </div>
