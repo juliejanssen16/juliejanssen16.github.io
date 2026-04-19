@@ -2,6 +2,21 @@
 // COOKIE POPUP
 // =====================
 const popUp = document.getElementById("cookiePopup");
+const scrollProgressBar = document.getElementById("scrollProgressBar");
+
+// =====================
+// SCROLL PROGRESS
+// =====================
+function updateScrollProgress() {
+  if (!scrollProgressBar) return;
+
+  const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0;
+  scrollProgressBar.style.width = `${Math.min(progress, 100)}%`;
+}
+
+window.addEventListener("scroll", updateScrollProgress, { passive: true });
+window.addEventListener("resize", updateScrollProgress);
 
 document.getElementById("acceptCookie")?.addEventListener("click", () => {
   const d = new Date();
@@ -61,6 +76,7 @@ window.addEventListener("load", () => {
   if (homeBtn) homeBtn.classList.add("active");
 
   setTimeout(checkCookie, 600);
+  updateScrollProgress();
 });
 
 // =====================
@@ -207,4 +223,46 @@ filterButtons.forEach((button) => {
       card.classList.toggle("is-hidden", !showCard);
     });
   });
+});
+
+// =====================
+// COPY EMAIL BUTTONS
+// =====================
+const copyEmailButtons = document.querySelectorAll(".copyEmailBtn");
+
+async function copyEmail(button) {
+  const email = button.dataset.email;
+  if (!email) return;
+
+  const originalText = button.textContent;
+
+  try {
+    if (navigator.clipboard) {
+      await navigator.clipboard.writeText(email);
+    } else {
+      const textarea = document.createElement("textarea");
+      textarea.value = email;
+      textarea.setAttribute("readonly", "");
+      textarea.style.position = "fixed";
+      textarea.style.opacity = "0";
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+    }
+
+    button.textContent = "Copied";
+    button.classList.add("is-copied");
+  } catch {
+    button.textContent = "Copy failed";
+  }
+
+  setTimeout(() => {
+    button.textContent = originalText;
+    button.classList.remove("is-copied");
+  }, 1800);
+}
+
+copyEmailButtons.forEach((button) => {
+  button.addEventListener("click", () => copyEmail(button));
 });

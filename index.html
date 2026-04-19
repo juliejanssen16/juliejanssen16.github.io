@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="style.css" />
   </head>
  <body>
+  <div class="scrollProgress" aria-hidden="true">
+    <span id="scrollProgressBar"></span>
+  </div>
+
   <!-- COOKIE POPUP -->
   <div id="cookiePopup" class="cookie-hide" role="dialog" aria-live="polite">
     <img src="images/Cookies.png" alt="Cookie icon" />
@@ -454,7 +458,8 @@
     <p id="ContactPageParagraph">
       You're welcome to contact me on the platforms below:
       <br /><br />
-      Email: <a href="mailto:juliejanssenwerk@icloud.com">juliejanssenwerk@icloud.com</a>
+	      Email: <a href="mailto:juliejanssenwerk@icloud.com">juliejanssenwerk@icloud.com</a>
+	      <button class="copyEmailBtn" type="button" data-email="juliejanssenwerk@icloud.com">Copy email</button>
       <br />
       Facebook: Julie Janssen
     </p>
@@ -469,7 +474,10 @@
           Julie Janssen shares portfolio projects, school work, and personal development.
           Built with care, curiosity, and a love for friendly digital experiences.
         </p>
-        <a href="mailto:juliejanssenwerk@icloud.com">juliejanssenwerk@icloud.com</a>
+        <div class="footerEmailRow">
+          <a href="mailto:juliejanssenwerk@icloud.com">juliejanssenwerk@icloud.com</a>
+          <button class="copyEmailBtn footerCopyBtn" type="button" data-email="juliejanssenwerk@icloud.com">Copy</button>
+        </div>
       </div>
 
       <form class="footerContact" action="mailto:juliejanssenwerk@icloud.com" method="post" enctype="text/plain">

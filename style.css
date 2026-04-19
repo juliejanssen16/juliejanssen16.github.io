@@ -44,6 +44,25 @@ body {
   line-height: 1.6;
 }
 
+.scrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.42);
+  z-index: 3000;
+}
+
+.scrollProgress span {
+  display: block;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--pink), var(--pink2));
+  box-shadow: 0 0 12px rgba(219, 39, 119, 0.5);
+  transition: width 80ms linear;
+}
+
 /* ===== TOPBAR NAV ===== */
 .topbar {
   position: sticky;
@@ -88,6 +107,35 @@ body {
 .bubbly-button:active,
 .dropbtn:active {
   transform: translateY(0px) scale(0.98);
+}
+
+.copyEmailBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  margin-left: 8px;
+  border: 1px solid rgba(236, 72, 153, 0.22);
+  border-radius: 8px;
+  background: rgba(236, 72, 153, 0.1);
+  color: var(--pink2);
+  font-family: "Poppins", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: 0 12px;
+  cursor: pointer;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.copyEmailBtn:hover {
+  background: rgba(236, 72, 153, 0.16);
+  transform: translateY(-1px);
+}
+
+.copyEmailBtn.is-copied {
+  background: rgba(39, 174, 96, 0.14);
+  color: #1f7a43;
+  border-color: rgba(39, 174, 96, 0.24);
 }
 
 /* Active tab highlight */
@@ -844,6 +892,33 @@ body {
 .footerIntro a:hover {
   color: white;
   text-decoration: underline;
+}
+
+.footerEmailRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.footerEmailRow .copyEmailBtn {
+  margin-left: 0;
+}
+
+.footerCopyBtn {
+  min-height: 30px;
+  border-color: rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.footerCopyBtn:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.footerCopyBtn.is-copied {
+  background: rgba(39, 174, 96, 0.22);
+  color: white;
 }
 
 .footerContact {
