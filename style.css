@@ -232,23 +232,48 @@ body {
 
 @media (min-width: 1025px) {
   .dropdown-content {
-    width: min(960px, calc(100vw - 44px));
+    width: min(1040px, calc(100vw - 44px));
     padding: 18px;
     border-radius: 8px;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 10px;
     background: rgba(255, 255, 255, 0.96);
+    counter-reset: menuSection;
   }
 
   .dropdown-content::before {
-    content: "Projects";
+    content: "Best and live projects";
     grid-column: 1 / -1;
     color: rgba(36, 26, 34, 0.9);
     font-size: 1rem;
     font-weight: 800;
     padding: 0 4px 4px;
     text-align: left;
+  }
+
+  .dropdown-content button:nth-of-type(6)::before {
+    content: "Unity and game projects";
+  }
+
+  .dropdown-content button:nth-of-type(12)::before {
+    content: "Web projects";
+  }
+
+  .dropdown-content button:nth-of-type(14)::before {
+    content: "Design and app concepts";
+  }
+
+  .dropdown-content button:nth-of-type(6)::before,
+  .dropdown-content button:nth-of-type(12)::before,
+  .dropdown-content button:nth-of-type(14)::before {
+    position: absolute;
+    top: -28px;
+    left: 0;
+    color: rgba(36, 26, 34, 0.9);
+    font-size: 1rem;
+    font-weight: 800;
+    white-space: nowrap;
   }
 
   .dropdown-content button {
@@ -263,6 +288,13 @@ body {
     gap: 6px;
     text-align: left;
     line-height: 1.25;
+    position: relative;
+  }
+
+  .dropdown-content button:nth-of-type(6),
+  .dropdown-content button:nth-of-type(12),
+  .dropdown-content button:nth-of-type(14) {
+    margin-top: 30px;
   }
 
   .dropdown-content button::after {
@@ -422,7 +454,9 @@ body {
 
 /* ===== HOME FEATURE SECTIONS ===== */
 .jourHelpFeature,
-.learningTimeline {
+.learningTimeline,
+.focusSection,
+.skillsSection {
   margin-top: 28px;
   text-align: left;
   border-top: 1px solid rgba(236, 72, 153, 0.14);
@@ -469,7 +503,9 @@ body {
 }
 
 .jourHelpFeature p,
-.learningTimeline p {
+.learningTimeline p,
+.focusSection p,
+.skillsSection p {
   margin: 0;
 }
 
@@ -498,6 +534,61 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
   margin-top: 22px;
+}
+
+.focusGrid,
+.skillsGrid,
+.overviewGrid {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.focusGrid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.skillsGrid,
+.overviewGrid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.focusGrid article,
+.skillsGrid article,
+.overviewGrid article {
+  border: 1px solid rgba(236, 72, 153, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.58);
+  padding: 16px;
+  text-align: left;
+}
+
+.focusGrid h2,
+.skillsGrid h2,
+.overviewGrid h2 {
+  margin-top: 0;
+}
+
+.overviewLink {
+  display: block;
+  width: 100%;
+  min-height: 38px;
+  margin-top: 8px;
+  border: 1px solid rgba(236, 72, 153, 0.18);
+  border-radius: 8px;
+  background: rgba(236, 72, 153, 0.08);
+  color: rgba(36, 26, 34, 0.78);
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  text-align: left;
+  padding: 0 12px;
+  cursor: pointer;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.overviewLink:hover {
+  background: rgba(236, 72, 153, 0.14);
+  transform: translateY(-1px);
 }
 
 .statItem {
@@ -802,6 +893,17 @@ body {
 
 .projectMeta p {
   margin: 0;
+}
+
+.difficultyBadge {
+  width: fit-content;
+  margin: 18px auto 0;
+  border: 1px solid rgba(236, 72, 153, 0.18);
+  border-radius: 8px;
+  background: rgba(236, 72, 153, 0.1);
+  color: var(--pink2);
+  font-weight: 800;
+  padding: 8px 12px;
 }
 
 .learnedGrid {
@@ -1264,6 +1366,12 @@ body {
 
   .timelineList {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .focusGrid,
+  .skillsGrid,
+  .overviewGrid {
+    grid-template-columns: 1fr;
   }
 
   .portfolioStats {

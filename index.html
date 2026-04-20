@@ -60,9 +60,10 @@
   role="menu"
   aria-label="Project menu"
 >
-  <!-- keep your buttons exactly the same inside -->
-  <button id="buttonBestWork" class="bubbly-button tablinks" role="menuitem" data-menu-copy="A quick path to the projects I am most proud of." onclick="openTab(event, 'BestWork')">Best Work</button>
-  <button id="buttonJourHelpOCD" class="bubbly-button tablinks" role="menuitem" data-menu-copy="Calm OCD and autism awareness guides on JourHelp." onclick="openTab(event, 'jourHelpOCD')">JourHelp Guides</button>
+	  <!-- keep your buttons exactly the same inside -->
+	  <button id="buttonBestWork" class="bubbly-button tablinks" role="menuitem" data-menu-copy="A quick path to the projects I am most proud of." onclick="openTab(event, 'BestWork')">Best Work</button>
+	  <button id="buttonProjectsOverview" class="bubbly-button tablinks" role="menuitem" data-menu-copy="A full overview of all projects and categories." onclick="openTab(event, 'ProjectsOverview')">Projects Overview</button>
+	  <button id="buttonJourHelpOCD" class="bubbly-button tablinks" role="menuitem" data-menu-copy="Calm OCD and autism awareness guides on JourHelp." onclick="openTab(event, 'jourHelpOCD')">JourHelp Guides</button>
   <button id="buttonStimQuest" class="bubbly-button tablinks" role="menuitem" data-menu-copy="A gentle fidget-finding game made for StimQuest." onclick="openTab(event, 'stimQuest')">StimQuest</button>
   <button id="buttonClickbaitMe" class="bubbly-button tablinks" role="menuitem" data-menu-copy="A webgame about not trusting every instruction." onclick="openTab(event, 'clickbaitMe')">ClickbaitMe</button>
   <button id="buttonPong" class="bubbly-button tablinks" role="menuitem" data-menu-copy="Unity practice with movement, collision, and score logic." onclick="openTab(event, 'Pong')">Pong</button>
@@ -162,6 +163,68 @@
 	      <div class="statItem">
 	        <strong>2</strong>
 	        <span>Support guides</span>
+	      </div>
+	    </section>
+
+	    <section class="focusSection" aria-labelledby="focusTitle">
+	      <span class="sectionEyebrow">My focus</span>
+	      <h1 id="focusTitle">What I like to make</h1>
+	      <div class="focusGrid">
+	        <article>
+	          <h2>Calm Digital Spaces</h2>
+	          <p>I like making websites that feel readable, gentle, and easier to start with.</p>
+	        </article>
+	        <article>
+	          <h2>Web And Game Development</h2>
+	          <p>I enjoy building interactive projects with HTML, CSS, JavaScript, Unity, and C#.</p>
+	        </article>
+	        <article>
+	          <h2>Supportive Information</h2>
+	          <p>I care about autism, OCD, mental health, accessibility, and clear explanations.</p>
+	        </article>
+	      </div>
+	    </section>
+
+	    <section class="skillsSection" aria-labelledby="skillsTitle">
+	      <span class="sectionEyebrow">Featured skills</span>
+	      <h1 id="skillsTitle">Skills I use in projects</h1>
+	      <div class="skillsGrid">
+	        <article>
+	          <h2>Web</h2>
+	          <div class="toolTags">
+	            <span>HTML</span>
+	            <span>CSS</span>
+	            <span>JavaScript</span>
+	            <span>PHP basic</span>
+	          </div>
+	        </article>
+	        <article>
+	          <h2>Game</h2>
+	          <div class="toolTags">
+	            <span>Unity</span>
+	            <span>C#</span>
+	            <span>Game logic</span>
+	            <span>Debugging</span>
+	          </div>
+	        </article>
+	        <article>
+	          <h2>Design</h2>
+	          <div class="toolTags">
+	            <span>Blender basic</span>
+	            <span>Adobe XD</span>
+	            <span>UX</span>
+	            <span>Layout</span>
+	          </div>
+	        </article>
+	        <article>
+	          <h2>Support</h2>
+	          <div class="toolTags">
+	            <span>Research</span>
+	            <span>Accessibility</span>
+	            <span>Calm UX</span>
+	            <span>Clear writing</span>
+	          </div>
+	        </article>
 	      </div>
 	    </section>
 
@@ -283,6 +346,44 @@
 	    </div>
 	  </div>
 
+	  <!-- PROJECTS OVERVIEW -->
+	  <div id="ProjectsOverview" class="tabContent">
+	    <h1>Projects overview</h1>
+	    <p>Browse all projects by type and open the ones you want to read more about.</p>
+	    <div class="overviewGrid">
+	      <article>
+	        <h2>Best and live projects</h2>
+	        <button class="overviewLink tablinks" onclick="openTab(event, 'jourHelpOCD')">JourHelp Guides</button>
+	        <button class="overviewLink tablinks" onclick="openTab(event, 'stimQuest')">StimQuest</button>
+	        <button class="overviewLink tablinks" onclick="openTab(event, 'clickbaitMe')">ClickbaitMe</button>
+	      </article>
+	      <article>
+	        <h2>Web projects</h2>
+	        <button class="overviewLink tablinks" onclick="openTab(event, 'PointAndClick')">Point & Click</button>
+	        <button class="overviewLink tablinks" onclick="openTab(event, 'webshop')">Webshop</button>
+	        <button class="overviewLink tablinks" onclick="openTab(event, 'mentalHealthWeek')">MentalHealthWeek</button>
+	      </article>
+	      <article>
+	        <h2>Unity and game projects</h2>
+	        <button class="overviewLink tablinks" onclick="openTab(event, 'Pong')">Pong</button>
+	        <button class="overviewLink tablinks" onclick="openTab(event, 'FirstPerson')">First Person Shooter</button>
+	        <button class="overviewLink tablinks" onclick="openTab(event, 'MobileGame')">Mobile Game</button>
+	        <button class="overviewLink tablinks" onclick="openTab(event, 'Wandering')">Mindful Wandering</button>
+	        <button class="overviewLink tablinks" onclick="openTab(event, 'textGame')">Text Game</button>
+	        <button class="overviewLink tablinks" onclick="openTab(event, 'projectPlay')">SweetSweep</button>
+	        <button class="overviewLink tablinks" onclick="openTab(event, 'cubeWorld')">CubeWorld</button>
+	      </article>
+	      <article>
+	        <h2>Design and app concepts</h2>
+	        <button class="overviewLink tablinks" onclick="openTab(event, 'Ambition')">Ambition Project</button>
+	        <button class="overviewLink tablinks" onclick="openTab(event, 'BlenderCharacter')">Blender Character</button>
+	        <button class="overviewLink tablinks" onclick="openTab(event, 'OnTheGo')">Mental Health On The Go</button>
+	        <button class="overviewLink tablinks" onclick="openTab(event, 'effenaar')">Effenaar</button>
+	        <button class="overviewLink tablinks" onclick="openTab(event, 'loveSwipe')">LoveSwipe</button>
+	      </article>
+	    </div>
+	  </div>
+
 	  <!-- EXISTING PROJECT TABS (your content, lightly tidied) -->
 	  <div id="jourHelpOCD" class="tabContent">
 	    <h1 id="jourHelpOCDTitle">JourHelp Guides</h1>
@@ -319,6 +420,7 @@
 		        </div>
 		      </div>
 		    </div>
+		    <div class="difficultyBadge">Confidence: challenging but proud of it</div>
 		    <div class="learnedGrid">
 		      <article>
 		        <h2>What I worked on</h2>
@@ -360,6 +462,7 @@
 		        </div>
 		      </div>
 		    </div>
+		    <div class="difficultyBadge">Confidence: still learning, but complete</div>
 		    <div class="learnedGrid">
 		      <article>
 		        <h2>What I worked on</h2>
@@ -401,6 +504,7 @@
 		        </div>
 		      </div>
 		    </div>
+		    <div class="difficultyBadge">Confidence: playful and challenging</div>
 		    <div class="learnedGrid">
 		      <article>
 		        <h2>What I worked on</h2>
@@ -427,6 +531,7 @@
 		      I learned how to set up objects, create movement, work with collisions, switch scenes, and add a particle
 		      effect. This project helped me understand how small scripts can work together to create a complete game loop.
 		    </p>
+		    <div class="difficultyBadge">Confidence: beginner Unity project</div>
 		    <div class="learnedGrid">
 		      <article>
 		        <h2>What I worked on</h2>
@@ -452,6 +557,7 @@
 		      into a game environment. I also learned about collision setup and importing Blender files into Unity,
 		      which helped me understand the connection between asset creation and game development.
 		    </p>
+		    <div class="difficultyBadge">Confidence: challenging 3D practice</div>
 		    <div class="learnedGrid">
 		      <article>
 		        <h2>What I worked on</h2>
@@ -477,6 +583,7 @@
 		      and camera movement. I also learned how terrain height, collisions, and object placement affect the way
 		      a player moves through a level.
 		    </p>
+		    <div class="difficultyBadge">Confidence: challenging Unity project</div>
 		    <div class="learnedGrid">
 		      <article>
 		        <h2>What I worked on</h2>
@@ -502,6 +609,7 @@
 		      The project became difficult because of camera issues, but that made it useful practice for troubleshooting,
 		      testing different solutions, and understanding how assets behave in Unity.
 		    </p>
+		    <div class="difficultyBadge">Confidence: experimental prototype</div>
 		    <div class="learnedGrid">
 		      <article>
 		        <h2>What I worked on</h2>
@@ -527,6 +635,7 @@
 		      environment and creating a relaxed experience. The biggest challenge was getting the player and camera
 		      movement to feel right, which taught me how important controls are for the mood of a game.
 		    </p>
+		    <div class="difficultyBadge">Confidence: still learning movement</div>
 		    <div class="learnedGrid">
 		      <article>
 		        <h2>What I worked on</h2>
@@ -552,6 +661,7 @@
 		      I faced challenges with screen sizes, text sizes, and scene switching, but the project helped me learn how
 		      to research problems, test ideas, and trust the process when something does not work immediately.
 		    </p>
+		    <div class="difficultyBadge">Confidence: app concept practice</div>
 		    <div class="learnedGrid">
 		      <article>
 		        <h2>What I worked on</h2>
@@ -577,6 +687,7 @@
 		      The tile map was made with Photoshop, so this project combined design work with interactive code.
 		      It helped me understand how planning, visual assets, and JavaScript can come together in one web experience.
 		    </p>
+		    <div class="difficultyBadge">Confidence: web interaction practice</div>
 		    <div class="learnedGrid">
 		      <article>
 		        <h2>What I worked on</h2>
@@ -602,6 +713,7 @@
 		      experimenting on my own, and staying patient when a model did not look right immediately.
 		      This project made me more comfortable with exploring new software and learning through trial and error.
 		    </p>
+		    <div class="difficultyBadge">Confidence: beginner Blender practice</div>
 		    <div class="learnedGrid">
 		      <article>
 		        <h2>What I worked on</h2>
@@ -627,6 +739,7 @@
 		      The project helped me understand how logic can be used to create interaction, even without images or complex
 		      graphics.
 		    </p>
+		    <div class="difficultyBadge">Confidence: beginner C# story logic</div>
 		    <div class="learnedGrid">
 		      <article>
 		        <h2>What I worked on</h2>
@@ -652,6 +765,7 @@
 		      experience. This project helped me improve my HTML and CSS skills and made me think more about spacing,
 		      readable content, and simple navigation.
 		    </p>
+		    <div class="difficultyBadge">Confidence: web shop practice</div>
 		    <div class="learnedGrid">
 		      <article>
 		        <h2>What I worked on</h2>
@@ -676,6 +790,7 @@
 		      understand. This project helped me think about how a small game idea can become more interesting through
 		      visual style, clear feedback, and simple interaction.
 		    </p>
+		    <div class="difficultyBadge">Confidence: collaborative Unity project</div>
 		    <div class="learnedGrid">
 		      <article>
 		        <h2>What I worked on</h2>
@@ -700,6 +815,7 @@
 		      digital layout. The project helped me practice visual structure, matching a theme, and making a page that
 		      feels connected to the brand or location it represents.
 		    </p>
+		    <div class="difficultyBadge">Confidence: API practice</div>
 		    <div class="learnedGrid">
 		      <article>
 		        <h2>What I worked on</h2>
@@ -725,6 +841,7 @@
 		      space. It helped me learn more about level layout, object placement, and how visual style can make a game
 		      feel more recognizable.
 		    </p>
+		    <div class="difficultyBadge">Confidence: Unity and C# practice</div>
 		    <div class="learnedGrid">
 		      <article>
 		        <h2>What I worked on</h2>
@@ -750,6 +867,7 @@
 		      This project helped me think about user choices, quick feedback, and making an interface feel easy to
 		      understand from the first moment.
 		    </p>
+		    <div class="difficultyBadge">Confidence: design practice</div>
 		    <div class="learnedGrid">
 		      <article>
 		        <h2>What I worked on</h2>
@@ -775,6 +893,7 @@
 		      This project connects with my interest in helping people and made me think more carefully about tone,
 		      accessibility, and the way information can affect how someone feels.
 		    </p>
+		    <div class="difficultyBadge">Confidence: complex branching project</div>
 		    <div class="learnedGrid">
 		      <article>
 		        <h2>What I worked on</h2>
