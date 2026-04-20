@@ -255,6 +255,10 @@ body {
     text-align: left;
   }
 
+  .menuGroupLabelSolo + button {
+    grid-column: span 2;
+  }
+
   .dropdown-content button {
     min-height: 88px;
     margin: 0;
