@@ -314,20 +314,45 @@ projectsBtn?.addEventListener("keydown", (e) => {
 // =====================
 const filterButtons = document.querySelectorAll(".filterBtn");
 const projectCards = document.querySelectorAll(".projectCard");
+const projectSearch = document.getElementById("projectSearch");
+const projectSearchEmpty = document.getElementById("projectSearchEmpty");
+let activeProjectFilter = "all";
+
+function updateProjectCards() {
+  const query = projectSearch?.value.trim().toLowerCase() || "";
+  let visibleCount = 0;
+
+  projectCards.forEach((card) => {
+    const categories = card.dataset.category?.split(" ") || [];
+    const searchableText = `${card.textContent} ${card.dataset.search || ""}`.toLowerCase();
+    const matchesFilter =
+      activeProjectFilter === "all" || categories.includes(activeProjectFilter);
+    const matchesSearch = !query || searchableText.includes(query);
+    const showCard = matchesFilter && matchesSearch;
+
+    card.classList.toggle("is-hidden", !showCard);
+    if (showCard) visibleCount += 1;
+  });
+
+  projectSearchEmpty?.classList.toggle("is-visible", visibleCount === 0);
+}
 
 filterButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    const filter = button.dataset.filter;
-
+    activeProjectFilter = button.dataset.filter || "all";
     filterButtons.forEach((item) => item.classList.remove("active"));
     button.classList.add("active");
-
-    projectCards.forEach((card) => {
-      const categories = card.dataset.category?.split(" ") || [];
-      const showCard = filter === "all" || categories.includes(filter);
-      card.classList.toggle("is-hidden", !showCard);
-    });
+    updateProjectCards();
   });
+});
+
+projectSearch?.addEventListener("input", updateProjectCards);
+
+// =====================
+// PRINT PORTFOLIO SUMMARY
+// =====================
+document.getElementById("printPortfolioBtn")?.addEventListener("click", () => {
+  window.print();
 });
 
 // =====================

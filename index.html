@@ -195,46 +195,88 @@
 
   <!-- BEST WORK (PROJECT GRID) -->
   <div id="BestWork" class="tabContent">
-	    <h1 id="BestWorkPageTitle">My best work</h1>
-	    <p id="BestWorkParagraph">These are the projects I’m most proud of:</p>
+		    <h1 id="BestWorkPageTitle">My best work</h1>
+		    <p id="BestWorkParagraph">These are the projects I’m most proud of:</p>
+		    <div class="portfolioSummaryActions">
+		      <button id="printPortfolioBtn" class="summaryBtn" type="button">Download portfolio summary</button>
+		    </div>
 
-	    <div class="projectFilters" aria-label="Filter projects">
-	      <button class="filterBtn active" type="button" data-filter="all">All</button>
+		    <label class="projectSearchLabel" for="projectSearch">Search projects</label>
+		    <input
+		      id="projectSearch"
+		      class="projectSearchInput"
+		      type="search"
+		      placeholder="Search by project, tool, or topic..."
+		    />
+
+		    <div class="projectFilters" aria-label="Filter projects">
+		      <button class="filterBtn active" type="button" data-filter="all">All</button>
 	      <button class="filterBtn" type="button" data-filter="web">Web</button>
 	      <button class="filterBtn" type="button" data-filter="game">Game</button>
 	      <button class="filterBtn" type="button" data-filter="support">Support</button>
 	    </div>
 
 	    <div class="projectGrid">
-	      <article class="projectCard" data-category="support web">
-	        <img src="images/JourHelpAutismGuide.png" alt="Screenshot of the JourHelp autism guide" />
-	        <div class="projectBody">
-	          <h2>JourHelp Guides</h2>
-	          <p>Awareness guides about OCD and autism with calm explanations, accessible sections, and supportive information.</p>
-	          <button class="linkBtn tablinks" onclick="openTab(event, 'jourHelpOCD')">Open project →</button>
-	        </div>
-	      </article>
+		      <article class="projectCard" data-category="support web" data-search="jourhelp guides ocd autism support accessibility html css javascript live website personal project">
+		        <img src="images/JourHelpAutismGuide.png" alt="Screenshot of the JourHelp autism guide" />
+		        <div class="projectBody">
+		          <h2>JourHelp Guides</h2>
+		          <div class="statusBadges" aria-label="Project status">
+		            <span>Live website</span>
+		            <span>Personal project</span>
+		          </div>
+		          <p>Awareness guides about OCD and autism with calm explanations, accessible sections, and supportive information.</p>
+		          <div class="toolTags" aria-label="Tools used">
+		            <span>HTML</span>
+		            <span>CSS</span>
+		            <span>JavaScript</span>
+		            <span>Accessibility</span>
+		          </div>
+		          <button class="linkBtn tablinks" onclick="openTab(event, 'jourHelpOCD')">Open project →</button>
+		        </div>
+		      </article>
 
-	      <article class="projectCard" data-category="support web game">
-	        <img src="images/StimQuestFidgetFinder.png" alt="Screenshot of the StimQuest fidget finder" />
-	        <div class="projectBody">
-	          <h2>StimQuest</h2>
-	          <p>Fidget Finder is a soft interactive webgame where users find hidden fidgets and keep them in a tray.</p>
-	          <button class="linkBtn tablinks" onclick="openTab(event, 'stimQuest')">Open project →</button>
-	        </div>
-	      </article>
+		      <article class="projectCard" data-category="support web game" data-search="stimquest fidget finder support web game javascript sensory friendly live website personal project">
+		        <img src="images/StimQuestFidgetFinder.png" alt="Screenshot of the StimQuest fidget finder" />
+		        <div class="projectBody">
+		          <h2>StimQuest</h2>
+		          <div class="statusBadges" aria-label="Project status">
+		            <span>Live website</span>
+		            <span>Personal project</span>
+		          </div>
+		          <p>Fidget Finder is a soft interactive webgame where users find hidden fidgets and keep them in a tray.</p>
+		          <div class="toolTags" aria-label="Tools used">
+		            <span>HTML</span>
+		            <span>CSS</span>
+		            <span>JavaScript</span>
+		            <span>Game</span>
+		          </div>
+		          <button class="linkBtn tablinks" onclick="openTab(event, 'stimQuest')">Open project →</button>
+		        </div>
+		      </article>
 
-	      <article class="projectCard" data-category="web game">
-	        <img src="images/ClickbaitMe.png" alt="Screenshot of the ClickbaitMe webgame" />
-	        <div class="projectBody">
-	          <h2>ClickbaitMe</h2>
-	          <p>A playful webgame about misleading instructions, quick reactions, levels, score, and a little chaos.</p>
-	          <button class="linkBtn tablinks" onclick="openTab(event, 'clickbaitMe')">Open project →</button>
-	        </div>
-	      </article>
+		      <article class="projectCard" data-category="web game" data-search="clickbaitme web game javascript score levels streak chaos live website personal project">
+		        <img src="images/ClickbaitMe.png" alt="Screenshot of the ClickbaitMe webgame" />
+		        <div class="projectBody">
+		          <h2>ClickbaitMe</h2>
+		          <div class="statusBadges" aria-label="Project status">
+		            <span>Live website</span>
+		            <span>Personal project</span>
+		          </div>
+		          <p>A playful webgame about misleading instructions, quick reactions, levels, score, and a little chaos.</p>
+		          <div class="toolTags" aria-label="Tools used">
+		            <span>HTML</span>
+		            <span>CSS</span>
+		            <span>JavaScript</span>
+		            <span>Game logic</span>
+		          </div>
+		          <button class="linkBtn tablinks" onclick="openTab(event, 'clickbaitMe')">Open project →</button>
+		        </div>
+		      </article>
 
-	    </div>
-	    <div class="bestWorkCta">
+		    </div>
+		    <p id="projectSearchEmpty" class="projectSearchEmpty">No projects found for that search.</p>
+		    <div class="bestWorkCta">
 	      <h2>Want to ask about one of these projects?</h2>
 	      <p>I’m happy to talk about my process, what I learned, or how I built them.</p>
 	      <button class="bubbly-button tablinks" onclick="openTab(event, 'ContactPage')">Contact me</button>
@@ -254,40 +296,127 @@
 	        <figcaption>OCD awareness guide</figcaption>
 	      </figure>
 	    </div>
-	    <p id="jourHelpOCDParagraph">
+		    <p id="jourHelpOCDParagraph">
 	      The JourHelp guides are part of JourHelp, my own website about OCD and autism.
 	      I made these pages to explain both topics in a calm, compassionate, and informative way.
 	      The OCD guide includes information about what OCD is, different types, symptoms, treatment, personal stories,
 	      and coping strategies. The autism guide focuses on understanding autism, characteristics, strengths, sensory
 	      needs, diagnosis, support, and real experiences. The goal is to make both subjects feel easier to start reading,
 	      especially for people who may already feel overwhelmed or misunderstood.
-	    </p>
-	    <a class="projectVisitLink" href="https://jourhelp.nl/#undefinedocd-home" target="_blank" rel="noopener noreferrer">Visit project</a>
-	  </div>
+		    </p>
+		    <div class="projectMeta">
+		      <div>
+		        <h2>Status</h2>
+		        <p>Live website · Personal project</p>
+		      </div>
+		      <div>
+		        <h2>Tools used</h2>
+		        <div class="toolTags">
+		          <span>HTML</span>
+		          <span>CSS</span>
+		          <span>JavaScript</span>
+		          <span>Accessibility</span>
+		        </div>
+		      </div>
+		    </div>
+		    <div class="learnedGrid">
+		      <article>
+		        <h2>What I worked on</h2>
+		        <p>I created JourHelp and built the guides to present OCD and autism information in a calm way.</p>
+		      </article>
+		      <article>
+		        <h2>Hardest part</h2>
+		        <p>The hardest part was doing research and turning information into clear, readable content.</p>
+		      </article>
+		      <article>
+		        <h2>What I learned</h2>
+		        <p>I learned more about autism, OCD information, and coding a supportive website experience.</p>
+		      </article>
+		    </div>
+		    <a class="projectVisitLink" href="https://jourhelp.nl/#undefinedocd-home" target="_blank" rel="noopener noreferrer">Visit project</a>
+		  </div>
 
 	  <div id="stimQuest" class="tabContent">
 	    <h1 id="stimQuestTitle">StimQuest</h1>
 	    <img src="images/StimQuestFidgetFinder.png" id="stimQuestImage" alt="Screenshot of the StimQuest fidget finder" />
-	    <p id="stimQuestParagraph">
+		    <p id="stimQuestParagraph">
 	      StimQuest is a gentle fidget-finding webgame. The player searches a soft, pastel scene for hidden fidgets
 	      and collects them in a tray. I focused on creating a low-pressure interaction with no timer, simple controls,
 	      and a calm visual style. This project helped me practice playful web interaction while still keeping the
-	      experience relaxed and sensory-friendly.
-	    </p>
-	    <a class="projectVisitLink" href="https://stimquest.nl" target="_blank" rel="noopener noreferrer">Visit project</a>
-	  </div>
+		      experience relaxed and sensory-friendly.
+		    </p>
+		    <div class="projectMeta">
+		      <div>
+		        <h2>Status</h2>
+		        <p>Live website · Personal project</p>
+		      </div>
+		      <div>
+		        <h2>Tools used</h2>
+		        <div class="toolTags">
+		          <span>HTML</span>
+		          <span>CSS</span>
+		          <span>JavaScript</span>
+		          <span>Game</span>
+		        </div>
+		      </div>
+		    </div>
+		    <div class="learnedGrid">
+		      <article>
+		        <h2>What I worked on</h2>
+		        <p>I created StimQuest and built the fidget finder idea into a soft interactive webgame.</p>
+		      </article>
+		      <article>
+		        <h2>Hardest part</h2>
+		        <p>The hardest part was coming up with the idea and shaping it into a clear interaction.</p>
+		      </article>
+		      <article>
+		        <h2>What I learned</h2>
+		        <p>I learned more about coding an interactive web project.</p>
+		      </article>
+		    </div>
+		    <a class="projectVisitLink" href="https://stimquest.nl" target="_blank" rel="noopener noreferrer">Visit project</a>
+		  </div>
 
 	  <div id="clickbaitMe" class="tabContent">
 	    <h1 id="clickbaitMeTitle">ClickbaitMe</h1>
 	    <img src="images/ClickbaitMe.png" id="clickbaitMeImage" alt="Screenshot of the ClickbaitMe webgame" />
-	    <p id="clickbaitMeParagraph">
+		    <p id="clickbaitMeParagraph">
 	      ClickbaitMe is a webgame built around misleading instructions and playful chaos.
 	      The player has to react to instructions, but the game is not always honest about what it wants.
 	      I worked on the interface, score, levels, streak system, and the overall joke of the experience.
-	      It was a fun way to practice JavaScript logic, feedback, and making a small browser game feel complete.
-	    </p>
-	    <a class="projectVisitLink" href="https://juliejanssen.nl/clickbaitme/" target="_blank" rel="noopener noreferrer">Visit project</a>
-	  </div>
+		      It was a fun way to practice JavaScript logic, feedback, and making a small browser game feel complete.
+		    </p>
+		    <div class="projectMeta">
+		      <div>
+		        <h2>Status</h2>
+		        <p>Live website · Personal project</p>
+		      </div>
+		      <div>
+		        <h2>Tools used</h2>
+		        <div class="toolTags">
+		          <span>HTML</span>
+		          <span>CSS</span>
+		          <span>JavaScript</span>
+		          <span>Game logic</span>
+		        </div>
+		      </div>
+		    </div>
+		    <div class="learnedGrid">
+		      <article>
+		        <h2>What I worked on</h2>
+		        <p>I created ClickbaitMe and built the playful webgame concept around misleading instructions.</p>
+		      </article>
+		      <article>
+		        <h2>Hardest part</h2>
+		        <p>The hardest part was developing the idea and making the concept feel fun.</p>
+		      </article>
+		      <article>
+		        <h2>What I learned</h2>
+		        <p>I learned more about coding a browser game with interaction and feedback.</p>
+		      </article>
+		    </div>
+		    <a class="projectVisitLink" href="https://juliejanssen.nl/clickbaitme/" target="_blank" rel="noopener noreferrer">Visit project</a>
+		  </div>
 
 	  <div id="Pong" class="tabContent">
     <h1 id="PongTitle">PongGame</h1>
