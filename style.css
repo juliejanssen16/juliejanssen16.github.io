@@ -407,12 +407,32 @@ body {
 
 .chips {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 10px;
   margin: 14px 0 14px;
+  max-width: 100%;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scrollbar-color: rgba(219, 39, 119, 0.42) rgba(236, 72, 153, 0.1);
+  scrollbar-width: thin;
+}
+
+.chips::-webkit-scrollbar {
+  height: 8px;
+}
+
+.chips::-webkit-scrollbar-track {
+  background: rgba(236, 72, 153, 0.1);
+  border-radius: 8px;
+}
+
+.chips::-webkit-scrollbar-thumb {
+  background: rgba(219, 39, 119, 0.42);
+  border-radius: 8px;
 }
 
 .chip {
+  flex: 0 0 auto;
   background: rgba(236, 72, 153, 0.12);
   border: 1px solid rgba(236, 72, 153, 0.18);
   padding: 8px 12px;
@@ -1413,7 +1433,7 @@ body {
   }
 
   .chips {
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .heroActions {
