@@ -1,7 +1,14 @@
 // =====================
 // COOKIE POPUP
 // =====================
+const COOKIE_CONSENT_KEY = "juliePortfolioCookieConsent";
 const popUp = document.getElementById("cookiePopup");
+const acceptCookieBtn = document.getElementById("acceptCookie");
+const rejectCookieBtn = document.getElementById("rejectCookie");
+const saveCookieSettingsBtn = document.getElementById("saveCookieSettings");
+const externalCookiesToggle = document.getElementById("externalCookiesToggle");
+const cookieSettingsLink = document.getElementById("cookieSettingsLink");
+const translateConsentMessage = document.getElementById("translateConsentMessage");
 const scrollProgressBar = document.getElementById("scrollProgressBar");
 
 // =====================
@@ -18,28 +25,117 @@ function updateScrollProgress() {
 window.addEventListener("scroll", updateScrollProgress, { passive: true });
 window.addEventListener("resize", updateScrollProgress);
 
-document.getElementById("acceptCookie")?.addEventListener("click", () => {
-  const d = new Date();
-  d.setMinutes(d.getMinutes() + 2);
-  document.cookie =
-    "myCookieName=thisIsMyCookie; expires=" + d.toUTCString() + "; path=/";
+function readCookieConsent() {
+  try {
+    return JSON.parse(localStorage.getItem(COOKIE_CONSENT_KEY));
+  } catch {
+    return null;
+  }
+}
 
-  popUp?.classList.add("hide");
-  popUp?.classList.remove("cookie-show");
-});
+function saveCookieConsent(allowExternalServices) {
+  const consent = {
+    essential: true,
+    externalServices: allowExternalServices,
+    savedAt: new Date().toISOString(),
+  };
 
-const checkCookie = () => {
-  const hasCookie = document.cookie.includes("myCookieName=thisIsMyCookie");
+  localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(consent));
+  return consent;
+}
+
+function showCookiePopup() {
   if (!popUp) return;
 
-  if (hasCookie) {
-    popUp.classList.add("cookie-hide");
-    popUp.classList.remove("cookie-show");
-  } else {
-    popUp.classList.add("cookie-show");
-    popUp.classList.remove("cookie-hide");
+  const savedConsent = readCookieConsent();
+  if (externalCookiesToggle) {
+    externalCookiesToggle.checked = Boolean(savedConsent?.externalServices);
   }
-};
+
+  popUp.classList.remove("hide", "cookie-hide");
+  popUp.classList.add("cookie-show");
+}
+
+function hideCookiePopup() {
+  popUp?.classList.add("hide");
+  popUp?.classList.remove("cookie-show");
+}
+
+function deleteLegacyCookie() {
+  document.cookie = "myCookieName=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+}
+
+function deleteGoogleTranslateCookie() {
+  document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+  document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=${window.location.hostname}`;
+}
+
+function loadGoogleTranslate() {
+  if (translateConsentMessage) {
+    translateConsentMessage.textContent = "Google Translate is enabled.";
+    translateConsentMessage.classList.add("is-hidden");
+  }
+
+  window.googleTranslateElementInit = () => {
+    if (!window.google?.translate) return;
+
+    new window.google.translate.TranslateElement(
+      {
+        pageLanguage: "en",
+        layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false,
+      },
+      "google_translate_element"
+    );
+  };
+
+  if (window.google?.translate) {
+    window.googleTranslateElementInit();
+    return;
+  }
+
+  if (document.getElementById("googleTranslateScript")) return;
+
+  const translateScript = document.createElement("script");
+  translateScript.id = "googleTranslateScript";
+  translateScript.src =
+    "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+  translateScript.async = true;
+  document.body.appendChild(translateScript);
+}
+
+function disableGoogleTranslate() {
+  deleteGoogleTranslateCookie();
+
+  const translateElement = document.getElementById("google_translate_element");
+  if (translateElement) translateElement.innerHTML = "";
+
+  if (translateConsentMessage) {
+    translateConsentMessage.textContent =
+      "Google Translate loads only after you allow optional external services.";
+    translateConsentMessage.classList.remove("is-hidden");
+  }
+}
+
+function applyCookieConsent(consent) {
+  if (consent?.externalServices) loadGoogleTranslate();
+  else disableGoogleTranslate();
+}
+
+function handleConsentChoice(allowExternalServices) {
+  const consent = saveCookieConsent(allowExternalServices);
+  applyCookieConsent(consent);
+  hideCookiePopup();
+}
+
+acceptCookieBtn?.addEventListener("click", () => handleConsentChoice(true));
+rejectCookieBtn?.addEventListener("click", () => handleConsentChoice(false));
+
+saveCookieSettingsBtn?.addEventListener("click", () => {
+  handleConsentChoice(Boolean(externalCookiesToggle?.checked));
+});
+
+cookieSettingsLink?.addEventListener("click", showCookiePopup);
 
 // =====================
 // TAB SYSTEM
@@ -75,7 +171,16 @@ window.addEventListener("load", () => {
   const homeBtn = document.getElementById("buttonHome");
   if (homeBtn) homeBtn.classList.add("active");
 
-  setTimeout(checkCookie, 600);
+  deleteLegacyCookie();
+
+  const savedConsent = readCookieConsent();
+  if (savedConsent) {
+    applyCookieConsent(savedConsent);
+    hideCookiePopup();
+  } else {
+    setTimeout(showCookiePopup, 600);
+  }
+
   updateScrollProgress();
 });
 

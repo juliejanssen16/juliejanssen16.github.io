@@ -12,11 +12,12 @@
   </div>
 
   <!-- COOKIE POPUP -->
-  <div id="cookiePopup" class="cookie-hide" role="dialog" aria-live="polite">
+  <div id="cookiePopup" class="cookie-hide" role="dialog" aria-live="polite" aria-labelledby="cookieTitle">
     <img src="images/Cookies.png" alt="Cookie icon" />
+    <h2 id="cookieTitle">Cookie settings</h2>
     <p>
-      This website uses cookies to improve your experience and show relevant information.
-      By continuing, you agree to our
+      This portfolio only uses essential storage to remember your choice. Google Translate is optional and may set
+      third-party cookies or process data outside this website. You can accept or refuse it.
       <a
         href="https://www.termsfeed.com/live/e06ad1a4-aa3b-44ad-b435-c3c3e803b7e8"
         target="_blank"
@@ -25,7 +26,16 @@
         Cookie Policy & Privacy
       </a>.
     </p>
-    <button id="acceptCookie" type="button">Accept</button>
+    <label class="cookieOption">
+      <input id="externalCookiesToggle" type="checkbox" />
+      Allow Google Translate
+    </label>
+    <div class="cookieActions">
+      <button id="rejectCookie" type="button">Reject optional</button>
+      <button id="saveCookieSettings" type="button">Save settings</button>
+      <button id="acceptCookie" type="button">Accept optional</button>
+    </div>
+    <p class="cookieSmallText">You can change this later from the footer.</p>
   </div>
 
   <!-- NAV -->
@@ -80,21 +90,11 @@
   <!-- TRANSLATE -->
   <div class="translate-container">
     <h3 class="translate-heading">🌍 Translate this page</h3>
+    <p id="translateConsentMessage" class="translateConsentMessage">
+      Google Translate loads only after you allow optional external services.
+    </p>
     <div id="google_translate_element"></div>
   </div>
-
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement(
-        {
-          pageLanguage: "en",
-          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-          autoDisplay: false,
-        },
-        "google_translate_element"
-      );
-    }
-  </script>
 
   <!-- HOME -->
   <div id="HomePage" class="tabContent">
@@ -526,16 +526,13 @@
     <div class="footerBottom">
       <span>Made with care by <strong>Julie Janssen</strong>.</span>
       <span>© <span id="year"></span> Julie Janssen. Portfolio and project archive.</span>
+      <button id="cookieSettingsLink" class="footerTextButton" type="button">Cookie settings</button>
     </div>
 
     <a class="footerTop" href="#" aria-label="Back to top">↑</a>
   </footer>
 
   <script src="script.js"></script>
-  <script
-    type="text/javascript"
-    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-  ></script>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
