@@ -230,6 +230,10 @@ body {
   transform: translateY(0px) scale(0.99);
 }
 
+.menuGroupLabel {
+  display: none;
+}
+
 @media (min-width: 1025px) {
   .dropdown-content {
     width: min(1040px, calc(100vw - 44px));
@@ -239,41 +243,16 @@ body {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 10px;
     background: rgba(255, 255, 255, 0.96);
-    counter-reset: menuSection;
   }
 
-  .dropdown-content::before {
-    content: "Best and live projects";
+  .menuGroupLabel {
+    display: block;
     grid-column: 1 / -1;
     color: rgba(36, 26, 34, 0.9);
     font-size: 1rem;
     font-weight: 800;
-    padding: 0 4px 4px;
+    padding: 8px 4px 4px;
     text-align: left;
-  }
-
-  .dropdown-content button:nth-of-type(6)::before {
-    content: "Unity and game projects";
-  }
-
-  .dropdown-content button:nth-of-type(12)::before {
-    content: "Web projects";
-  }
-
-  .dropdown-content button:nth-of-type(14)::before {
-    content: "Design and app concepts";
-  }
-
-  .dropdown-content button:nth-of-type(6)::before,
-  .dropdown-content button:nth-of-type(12)::before,
-  .dropdown-content button:nth-of-type(14)::before {
-    position: absolute;
-    top: -28px;
-    left: 0;
-    color: rgba(36, 26, 34, 0.9);
-    font-size: 1rem;
-    font-weight: 800;
-    white-space: nowrap;
   }
 
   .dropdown-content button {
@@ -289,12 +268,6 @@ body {
     text-align: left;
     line-height: 1.25;
     position: relative;
-  }
-
-  .dropdown-content button:nth-of-type(6),
-  .dropdown-content button:nth-of-type(12),
-  .dropdown-content button:nth-of-type(14) {
-    margin-top: 30px;
   }
 
   .dropdown-content button::after {
