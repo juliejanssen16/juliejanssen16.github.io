@@ -376,10 +376,14 @@ body {
 /* ===== HERO ===== */
 .hero {
   display: grid;
-  grid-template-columns: 180px 1fr;
+  grid-template-columns: 180px minmax(0, 1fr);
   gap: 26px;
   align-items: start;
   text-align: left;
+}
+
+.heroText {
+  min-width: 0;
 }
 
 #ImageIntroduction {
@@ -410,8 +414,10 @@ body {
   flex-wrap: nowrap;
   gap: 10px;
   margin: 14px 0 14px;
+  width: 100%;
   max-width: 100%;
   overflow-x: auto;
+  overflow-y: hidden;
   padding-bottom: 8px;
   scrollbar-color: rgba(219, 39, 119, 0.42) rgba(236, 72, 153, 0.1);
   scrollbar-width: thin;
