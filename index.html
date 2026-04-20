@@ -62,11 +62,11 @@
 >
 	  <span class="menuGroupLabel menuGroupLabelSolo" role="presentation">All projects</span>
 	  <button id="buttonProjectsOverview" class="bubbly-button tablinks" role="menuitem" data-menu-copy="A full overview of all projects and categories." onclick="openTab(event, 'ProjectsOverview')">Projects Overview</button>
-	  <span class="menuGroupLabel" role="presentation">Best and live projects</span>
+	  <span class="menuGroupLabel" role="presentation">Best work · outside of school</span>
 	  <button id="buttonBestWork" class="bubbly-button tablinks" role="menuitem" data-menu-copy="A quick path to the projects I am most proud of." onclick="openTab(event, 'BestWork')">Best Work</button>
-	  <button id="buttonJourHelpOCD" class="bubbly-button tablinks" role="menuitem" data-menu-copy="Calm OCD and autism awareness guides on JourHelp." onclick="openTab(event, 'jourHelpOCD')">JourHelp Guides</button>
-	  <button id="buttonStimQuest" class="bubbly-button tablinks" role="menuitem" data-menu-copy="A gentle fidget-finding game made for StimQuest." onclick="openTab(event, 'stimQuest')">StimQuest</button>
-	  <button id="buttonClickbaitMe" class="bubbly-button tablinks" role="menuitem" data-menu-copy="A webgame about not trusting every instruction." onclick="openTab(event, 'clickbaitMe')">ClickbaitMe</button>
+	  <button id="buttonJourHelpOCD" class="bubbly-button tablinks" role="menuitem" data-menu-copy="Outside of school: calm OCD and autism awareness guides." onclick="openTab(event, 'jourHelpOCD')">JourHelp Guides</button>
+	  <button id="buttonStimQuest" class="bubbly-button tablinks" role="menuitem" data-menu-copy="Outside of school: a gentle fidget-finding game." onclick="openTab(event, 'stimQuest')">StimQuest</button>
+	  <button id="buttonClickbaitMe" class="bubbly-button tablinks" role="menuitem" data-menu-copy="Outside of school: a webgame about misleading instructions." onclick="openTab(event, 'clickbaitMe')">ClickbaitMe</button>
 	  <span class="menuGroupLabel" role="presentation">Unity and game projects</span>
 	  <button id="buttonPong" class="bubbly-button tablinks" role="menuitem" data-menu-copy="Unity practice with movement, collision, and score logic." onclick="openTab(event, 'Pong')">Pong</button>
 	  <button id="buttonFirstPerson" class="bubbly-button tablinks" role="menuitem" data-menu-copy="A first-person prototype with player controls." onclick="openTab(event, 'FirstPerson')">First Person Shooter</button>
@@ -263,7 +263,7 @@
   <!-- BEST WORK (PROJECT GRID) -->
   <div id="BestWork" class="tabContent">
 		    <h1 id="BestWorkPageTitle">My best work</h1>
-		    <p id="BestWorkParagraph">These are the projects I’m most proud of:</p>
+			    <p id="BestWorkParagraph">These are the outside-of-school projects I’m most proud of:</p>
 		    <div class="portfolioSummaryActions">
 		      <button id="printPortfolioBtn" class="summaryBtn" type="button">Download portfolio summary</button>
 		    </div>
@@ -290,6 +290,7 @@
 		          <h2>JourHelp Guides</h2>
 		          <div class="statusBadges" aria-label="Project status">
 		            <span>Live website</span>
+		            <span>Outside of school</span>
 		            <span>Personal project</span>
 		          </div>
 		          <p>Awareness guides about OCD and autism with calm explanations, accessible sections, and supportive information.</p>
@@ -309,6 +310,7 @@
 		          <h2>StimQuest</h2>
 		          <div class="statusBadges" aria-label="Project status">
 		            <span>Live website</span>
+		            <span>Outside of school</span>
 		            <span>Personal project</span>
 		          </div>
 		          <p>Fidget Finder is a soft interactive webgame where users find hidden fidgets and keep them in a tray.</p>
@@ -328,6 +330,7 @@
 		          <h2>ClickbaitMe</h2>
 		          <div class="statusBadges" aria-label="Project status">
 		            <span>Live website</span>
+		            <span>Outside of school</span>
 		            <span>Personal project</span>
 		          </div>
 		          <p>A playful webgame about misleading instructions, quick reactions, levels, score, and a little chaos.</p>
@@ -356,7 +359,7 @@
 	    <p>Browse all projects by type and open the ones you want to read more about.</p>
 	    <div class="overviewGrid">
 	      <article>
-	        <h2>Best and live projects</h2>
+	        <h2>Best work · outside of school</h2>
 	        <button class="overviewLink tablinks" onclick="openTab(event, 'jourHelpOCD')">JourHelp Guides</button>
 	        <button class="overviewLink tablinks" onclick="openTab(event, 'stimQuest')">StimQuest</button>
 	        <button class="overviewLink tablinks" onclick="openTab(event, 'clickbaitMe')">ClickbaitMe</button>
@@ -409,11 +412,11 @@
 	      needs, diagnosis, support, and real experiences. The goal is to make both subjects feel easier to start reading,
 	      especially for people who may already feel overwhelmed or misunderstood.
 		    </p>
-		    <div class="projectMeta">
-		      <div>
-		        <h2>Status</h2>
-		        <p>Live website · Personal project</p>
-		      </div>
+			    <div class="projectMeta">
+			      <div>
+			        <h2>Status</h2>
+			        <p>Live website · Outside of school · Personal project</p>
+			      </div>
 		      <div>
 		        <h2>Tools used</h2>
 		        <div class="toolTags">
@@ -423,8 +426,9 @@
 		          <span>Accessibility</span>
 		        </div>
 		      </div>
-		    </div>
-		    <div class="difficultyBadge">Confidence: challenging but proud of it</div>
+			    </div>
+			    <p class="outsideSchoolNote">This is an outside of school project and part of my own JourHelp work.</p>
+			    <div class="difficultyBadge">Confidence: challenging but proud of it</div>
 		    <div class="learnedGrid">
 		      <article>
 		        <h2>What I worked on</h2>
@@ -451,11 +455,11 @@
 	      and a calm visual style. This project helped me practice playful web interaction while still keeping the
 		      experience relaxed and sensory-friendly.
 		    </p>
-		    <div class="projectMeta">
-		      <div>
-		        <h2>Status</h2>
-		        <p>Live website · Personal project</p>
-		      </div>
+			    <div class="projectMeta">
+			      <div>
+			        <h2>Status</h2>
+			        <p>Live website · Outside of school · Personal project</p>
+			      </div>
 		      <div>
 		        <h2>Tools used</h2>
 		        <div class="toolTags">
@@ -465,8 +469,9 @@
 		          <span>Game</span>
 		        </div>
 		      </div>
-		    </div>
-		    <div class="difficultyBadge">Confidence: still learning, but complete</div>
+			    </div>
+			    <p class="outsideSchoolNote">This is an outside of school project.</p>
+			    <div class="difficultyBadge">Confidence: still learning, but complete</div>
 		    <div class="learnedGrid">
 		      <article>
 		        <h2>What I worked on</h2>
@@ -493,11 +498,11 @@
 	      I worked on the interface, score, levels, streak system, and the overall joke of the experience.
 		      It was a fun way to practice JavaScript logic, feedback, and making a small browser game feel complete.
 		    </p>
-		    <div class="projectMeta">
-		      <div>
-		        <h2>Status</h2>
-		        <p>Live website · Personal project</p>
-		      </div>
+			    <div class="projectMeta">
+			      <div>
+			        <h2>Status</h2>
+			        <p>Live website · Outside of school · Personal project</p>
+			      </div>
 		      <div>
 		        <h2>Tools used</h2>
 		        <div class="toolTags">
@@ -507,8 +512,9 @@
 		          <span>Game logic</span>
 		        </div>
 		      </div>
-		    </div>
-		    <div class="difficultyBadge">Confidence: playful and challenging</div>
+			    </div>
+			    <p class="outsideSchoolNote">This is an outside of school project.</p>
+			    <div class="difficultyBadge">Confidence: playful and challenging</div>
 		    <div class="learnedGrid">
 		      <article>
 		        <h2>What I worked on</h2>
