@@ -66,6 +66,7 @@
 	  <button id="buttonBestWork" class="bubbly-button tablinks" role="menuitem" data-menu-copy="A quick path to the projects I am most proud of." onclick="openTab(event, 'BestWork')">Best Work</button>
 	  <button id="buttonJourHelpOCD" class="bubbly-button tablinks" role="menuitem" data-menu-copy="Outside of school: calm OCD and autism awareness guides." onclick="openTab(event, 'jourHelpOCD')">JourHelp Guides</button>
 	  <button id="buttonStimQuest" class="bubbly-button tablinks" role="menuitem" data-menu-copy="Outside of school: a gentle fidget-finding game." onclick="openTab(event, 'stimQuest')">StimQuest</button>
+	  <button id="buttonSquishly" class="bubbly-button tablinks" role="menuitem" data-menu-copy="Outside of school: a soft sensory playground with slime, sand, bubbles, and drift orbs." onclick="openTab(event, 'squishly')">Squishly</button>
 	  <button id="buttonLuminary" class="bubbly-button tablinks" role="menuitem" data-menu-copy="Outside of school: a Bible study web app with notes, search, and highlights." onclick="openTab(event, 'luminary')">Luminary</button>
 	  <button id="buttonClickbaitMe" class="bubbly-button tablinks" role="menuitem" data-menu-copy="Outside of school: a webgame about misleading instructions." onclick="openTab(event, 'clickbaitMe')">ClickbaitMe</button>
 	  <span class="menuGroupLabel" role="presentation">Unity and game projects</span>
@@ -182,7 +183,7 @@
 	        <span>Projects</span>
 	      </div>
 	      <div class="statItem">
-	        <strong>4</strong>
+	        <strong>5</strong>
 	        <span>Live websites</span>
 	      </div>
 	      <div class="statItem">
@@ -345,6 +346,26 @@
 		        </div>
 		      </article>
 
+		      <article class="projectCard" data-category="support web" data-search="squishly sensory playground slime sand bubbles drift orbs sensory friendly low stimulation html css javascript live website personal project">
+		        <img src="images/Squishly.png" alt="Screenshot of the Squishly sensory playground" />
+		        <div class="projectBody">
+		          <h2>Squishly</h2>
+		          <div class="statusBadges" aria-label="Project status">
+		            <span>Live website</span>
+		            <span>Outside of school</span>
+		            <span>Personal project</span>
+		          </div>
+		          <p>A soft sensory playground with draggable slime, a sand tray, bubble popping, and drifting orbs, plus a low stimulation mode.</p>
+		          <div class="toolTags" aria-label="Tools used">
+		            <span>HTML</span>
+		            <span>CSS</span>
+		            <span>JavaScript</span>
+		            <span>Canvas</span>
+		          </div>
+		          <button class="linkBtn tablinks" onclick="openTab(event, 'squishly')">Open project →</button>
+		        </div>
+		      </article>
+
 		      <article class="projectCard" data-category="web support" data-search="luminary bible study web app notes highlights search local storage javascript html css live website personal project">
 		        <img src="images/Luminary.png" alt="Screenshot of the Luminary Bible study project" />
 		        <div class="projectBody">
@@ -403,6 +424,7 @@
 	        <h2>Best work · outside of school</h2>
 	        <button class="overviewLink tablinks" onclick="openTab(event, 'jourHelpOCD')">JourHelp Guides</button>
 	        <button class="overviewLink tablinks" onclick="openTab(event, 'stimQuest')">StimQuest</button>
+	        <button class="overviewLink tablinks" onclick="openTab(event, 'squishly')">Squishly</button>
 	        <button class="overviewLink tablinks" onclick="openTab(event, 'luminary')">Luminary</button>
 	        <button class="overviewLink tablinks" onclick="openTab(event, 'clickbaitMe')">ClickbaitMe</button>
 	      </article>
@@ -529,6 +551,49 @@
 		      </article>
 		    </div>
 		    <a class="projectVisitLink" href="https://stimquest.nl" target="_blank" rel="noopener noreferrer">Visit project</a>
+		  </div>
+
+	  <div id="squishly" class="tabContent">
+	    <h1 id="squishlyTitle">Squishly</h1>
+	    <img src="images/Squishly.png" id="squishlyImage" alt="Screenshot of the Squishly sensory playground" />
+		    <p id="squishlyParagraph">
+	      Squishly is a soft sensory playground I built for JourHelp with draggable slime, a sand tray, a bubble
+	      pop grid, and drifting orbs. There are no goals, scores, or timers, just calm interactions to fidget
+	      with for as long as feels good. I also added a low stimulation mode that slows animations and softens
+		      shadows for a gentler experience.
+		    </p>
+			    <div class="projectMeta">
+			      <div>
+			        <h2>Status</h2>
+			        <p>Live website · Outside of school · Personal project</p>
+			      </div>
+		      <div>
+		        <h2>Tools used</h2>
+		        <div class="toolTags">
+		          <span>HTML</span>
+		          <span>CSS</span>
+		          <span>JavaScript</span>
+		          <span>Canvas</span>
+		        </div>
+		      </div>
+			    </div>
+			    <p class="outsideSchoolNote">This is an outside of school project and part of my own JourHelp work.</p>
+			    <div class="difficultyBadge">Confidence: playful and polished</div>
+		    <div class="learnedGrid">
+		      <article>
+		        <h2>What I worked on</h2>
+		        <p>I created Squishly and built the slime, sand, bubble, and drift orb modules along with the low stimulation mode.</p>
+		      </article>
+		      <article>
+		        <h2>Hardest part</h2>
+		        <p>The hardest part was getting the slime to feel soft and springy using canvas and SVG gooey filters.</p>
+		      </article>
+		      <article>
+		        <h2>What I learned</h2>
+		        <p>I learned more about canvas drawing, pointer-driven animation, and designing for sensory-friendly, low-pressure interaction.</p>
+		      </article>
+		    </div>
+		    <a class="projectVisitLink" href="https://juliejanssen.nl/squishly/" target="_blank" rel="noopener noreferrer">Visit project</a>
 		  </div>
 
 	  <div id="clickbaitMe" class="tabContent">
@@ -1065,10 +1130,12 @@
 	        <h4>Live projects</h4>
 	        <a href="https://jourhelp.nl" target="_blank" rel="noopener noreferrer">JourHelp</a>
 	        <a href="https://stimquest.nl" target="_blank" rel="noopener noreferrer">StimQuest</a>
+	        <a href="https://juliejanssen.nl/squishly/" target="_blank" rel="noopener noreferrer">Squishly</a>
 	        <a href="https://juliejanssen.nl/Luminary/" target="_blank" rel="noopener noreferrer">Luminary</a>
 	        <a href="https://juliejanssen.nl/clickbaitme" target="_blank" rel="noopener noreferrer">ClickbaitMe</a>
 	        <a href="#" onclick="openTab(event, 'jourHelpOCD')">JourHelp portfolio page</a>
 	        <a href="#" onclick="openTab(event, 'stimQuest')">StimQuest portfolio page</a>
+	        <a href="#" onclick="openTab(event, 'squishly')">Squishly portfolio page</a>
 	        <a href="#" onclick="openTab(event, 'luminary')">Luminary portfolio page</a>
 	        <a href="#" onclick="openTab(event, 'clickbaitMe')">ClickbaitMe portfolio page</a>
 	        <a href="https://www.spari.app/special-thanks" target="_blank" rel="noopener noreferrer">Reference</a>
